@@ -39,6 +39,10 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                         legislator["state_name"] = state_name
                     }
                     
+                    if let bioguide_id = subJson["bioguide_id"].string {
+                        legislator["bioguide_id"] = bioguide_id
+                    }
+                    
                     self.legislator_list.append(legislator)
                 }
                 self.legislators.reloadData()
@@ -64,13 +68,15 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = legislator["first_name"]! + " " + legislator["last_name"]!
         cell.detailTextLabel?.text = legislator["state_name"]
         
-        
+        let url = URL(string: "https://theunitedstates.io/images/congress/225x275/" + legislator["bioguide_id"]! + ".jpg")
+        let data = try? Data(contentsOf: url!)
+
+        cell.imageView?.image = UIImage(data: data!)
+
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
     }
-    
-    
 }
