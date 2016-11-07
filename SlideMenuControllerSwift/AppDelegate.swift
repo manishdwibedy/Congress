@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! LegislatorViewController
-        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as! LeftViewController
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as! MenuViewController
         
         leftViewController.mainViewController = mainViewController
         

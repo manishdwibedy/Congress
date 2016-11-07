@@ -16,7 +16,7 @@ protocol LeftMenuProtocol : class {
     func changeViewController(_ menu: LeftMenu)
 }
 
-class LeftViewController : UIViewController, LeftMenuProtocol {
+class MenuViewController : UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     var menus = ["Main", "Swift"]
@@ -63,7 +63,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     }
 }
 
-extension LeftViewController : UITableViewDelegate {
+extension MenuViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
@@ -87,7 +87,7 @@ extension LeftViewController : UITableViewDelegate {
     }
 }
 
-extension LeftViewController : UITableViewDataSource {
+extension MenuViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menus.count
