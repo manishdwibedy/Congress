@@ -21,6 +21,9 @@
 		5BC08EDC1DD030ED0010D1B7 /* HouseCommitteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EDB1DD030ED0010D1B7 /* HouseCommitteeViewController.swift */; };
 		5BC08EDE1DD031050010D1B7 /* SenateCommitteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EDD1DD031050010D1B7 /* SenateCommitteeViewController.swift */; };
 		5BC08EE01DD031130010D1B7 /* JointCommiteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EDF1DD031130010D1B7 /* JointCommiteeViewController.swift */; };
+		5BC08EE41DD033C80010D1B7 /* FavoriteLegislatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EE31DD033C80010D1B7 /* FavoriteLegislatorViewController.swift */; };
+		5BC08EE61DD033D40010D1B7 /* FavoriteBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EE51DD033D40010D1B7 /* FavoriteBillViewController.swift */; };
+		5BC08EE81DD033E70010D1B7 /* FavoriteCommitteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EE71DD033E70010D1B7 /* FavoriteCommitteeViewController.swift */; };
 		C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E6461A315E87003B7CC7 /* AppDelegate.swift */; };
 		C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C539E6481A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld */; };
 		C539E64C1A315E87003B7CC7 /* LegislatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E64B1A315E87003B7CC7 /* LegislatorViewController.swift */; };
@@ -72,6 +75,9 @@
 		5BC08EDB1DD030ED0010D1B7 /* HouseCommitteeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCommitteeViewController.swift; sourceTree = "<group>"; };
 		5BC08EDD1DD031050010D1B7 /* SenateCommitteeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenateCommitteeViewController.swift; sourceTree = "<group>"; };
 		5BC08EDF1DD031130010D1B7 /* JointCommiteeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointCommiteeViewController.swift; sourceTree = "<group>"; };
+		5BC08EE31DD033C80010D1B7 /* FavoriteLegislatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteLegislatorViewController.swift; sourceTree = "<group>"; };
+		5BC08EE51DD033D40010D1B7 /* FavoriteBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteBillViewController.swift; sourceTree = "<group>"; };
+		5BC08EE71DD033E70010D1B7 /* FavoriteCommitteeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCommitteeViewController.swift; sourceTree = "<group>"; };
 		C539E6411A315E87003B7CC7 /* SlideMenuControllerSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideMenuControllerSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C539E6451A315E87003B7CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C539E6461A315E87003B7CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +171,17 @@
 				5BC08EDF1DD031130010D1B7 /* JointCommiteeViewController.swift */,
 			);
 			name = Committee;
+			sourceTree = "<group>";
+		};
+		5BC08EE91DD033ED0010D1B7 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				5BC08ED91DD030200010D1B7 /* FavoriteViewController.swift */,
+				5BC08EE31DD033C80010D1B7 /* FavoriteLegislatorViewController.swift */,
+				5BC08EE51DD033D40010D1B7 /* FavoriteBillViewController.swift */,
+				5BC08EE71DD033E70010D1B7 /* FavoriteCommitteeViewController.swift */,
+			);
+			name = Favorite;
 			sourceTree = "<group>";
 		};
 		C539E6381A315E87003B7CC7 = {
@@ -272,7 +289,7 @@
 				C5BF6A8B1BF340020064C18E /* ExSlideMenuController.swift */,
 				5BC08ED61DD025800010D1B7 /* Bills */,
 				5BC08EE21DD031230010D1B7 /* Committee */,
-				5BC08ED91DD030200010D1B7 /* FavoriteViewController.swift */,
+				5BC08EE91DD033ED0010D1B7 /* Favorite */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -446,16 +463,19 @@
 			files = (
 				C5BF6A8E1BF34A8B0064C18E /* UIApplication.swift in Sources */,
 				5BC08EDC1DD030ED0010D1B7 /* HouseCommitteeViewController.swift in Sources */,
+				5BC08EE61DD033D40010D1B7 /* FavoriteBillViewController.swift in Sources */,
 				C539E64C1A315E87003B7CC7 /* LegislatorViewController.swift in Sources */,
 				C5C1CE611A70F3B600B6E411 /* UITableViewExtension.swift in Sources */,
 				5BC08ED21DD022E90010D1B7 /* LegSenateViewController.swift in Sources */,
 				5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */,
 				C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */,
 				5BC08ED01DD022D20010D1B7 /* LegHouseViewController.swift in Sources */,
+				5BC08EE41DD033C80010D1B7 /* FavoriteLegislatorViewController.swift in Sources */,
 				5BC08ED51DD0253F0010D1B7 /* NewBillsViewController.swift in Sources */,
 				5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */,
 				5BC08ED81DD02F180010D1B7 /* CommiteeViewController.swift in Sources */,
 				C5BF6A8C1BF340020064C18E /* ExSlideMenuController.swift in Sources */,
+				5BC08EE81DD033E70010D1B7 /* FavoriteCommitteeViewController.swift in Sources */,
 				C5C1CE5D1A70F27500B6E411 /* BaseTableViewCell.swift in Sources */,
 				5BC08EDE1DD031050010D1B7 /* SenateCommitteeViewController.swift in Sources */,
 				C539E66C1A316C78003B7CC7 /* MenuViewController.swift in Sources */,

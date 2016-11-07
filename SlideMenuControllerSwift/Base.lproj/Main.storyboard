@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="348" y="-209"/>
         </scene>
-        <!--Item-->
+        <!--Committee-->
         <scene sceneID="FhI-JW-VBO">
             <objects>
-                <viewController id="OrV-e0-j2v" sceneMemberID="viewController">
+                <viewController id="OrV-e0-j2v" customClass="FavoriteCommitteeViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2QP-Wv-RlZ"/>
                         <viewControllerLayoutGuide type="bottom" id="bM4-mK-40O"/>
@@ -142,18 +142,40 @@
                     <view key="view" contentMode="scaleToFill" id="Wlj-sG-gD3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYC-d7-SB1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PDm-GK-foE"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Favorite" id="TqG-7O-8Jv">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="Ii9-I1-2x0">
+                                            <connections>
+                                                <action selector="openMenu:" destination="OrV-e0-j2v" id="tOR-Z7-A5C"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BYC-d7-SB1" firstAttribute="leading" secondItem="Wlj-sG-gD3" secondAttribute="leading" id="D4l-1h-PDq"/>
+                            <constraint firstAttribute="trailing" secondItem="BYC-d7-SB1" secondAttribute="trailing" id="rhg-Qu-QIj"/>
+                            <constraint firstItem="BYC-d7-SB1" firstAttribute="top" secondItem="2QP-Wv-RlZ" secondAttribute="bottom" constant="8" id="wHE-FZ-Z8N"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="aj9-8h-ap3"/>
+                    <tabBarItem key="tabBarItem" title="Committee" id="0tC-kN-fOV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36c-BA-QEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="463"/>
         </scene>
-        <!--Item 2-->
+        <!--Bills-->
         <scene sceneID="IwQ-sB-3fp">
             <objects>
-                <viewController id="Tma-0z-JKZ" sceneMemberID="viewController">
+                <viewController id="Tma-0z-JKZ" customClass="FavoriteBillViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QOd-Pt-SDN"/>
                         <viewControllerLayoutGuide type="bottom" id="GVu-3P-rxf"/>
@@ -161,18 +183,40 @@
                     <view key="view" contentMode="scaleToFill" id="gt9-Mg-V0M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYL-Q1-D6V">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="oxe-fs-xlk"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Favorite" id="jZt-vP-f5v">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="NMC-Cq-PF1">
+                                            <connections>
+                                                <action selector="openMenu:" destination="Tma-0z-JKZ" id="kC8-2t-8hT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wYL-Q1-D6V" firstAttribute="top" secondItem="QOd-Pt-SDN" secondAttribute="bottom" constant="8" id="AHJ-bi-nq8"/>
+                            <constraint firstItem="wYL-Q1-D6V" firstAttribute="leading" secondItem="gt9-Mg-V0M" secondAttribute="leading" id="B94-CK-aI4"/>
+                            <constraint firstAttribute="trailing" secondItem="wYL-Q1-D6V" secondAttribute="trailing" id="pTT-Fy-FFT"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="uIO-9l-L2U"/>
+                    <tabBarItem key="tabBarItem" title="Bills" id="S81-Fp-ioB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHa-Xw-INV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2315" y="27"/>
         </scene>
-        <!--Item 1-->
+        <!--Legislators-->
         <scene sceneID="2xa-Sp-TOf">
             <objects>
-                <viewController id="9zb-Nm-u3o" sceneMemberID="viewController">
+                <viewController id="9zb-Nm-u3o" customClass="FavoriteLegislatorViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7hG-Zn-2Dz"/>
                         <viewControllerLayoutGuide type="bottom" id="iRt-FT-3Fn"/>
@@ -180,9 +224,31 @@
                     <view key="view" contentMode="scaleToFill" id="nUd-1n-A7z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fA8-RK-g0n">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0mj-4M-FzF"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Favorite" id="j1v-j5-8pf">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="7Ce-9O-0Yg">
+                                            <connections>
+                                                <action selector="openMenu:" destination="9zb-Nm-u3o" id="GDa-hC-MvU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fA8-RK-g0n" secondAttribute="trailing" id="804-Vs-e6g"/>
+                            <constraint firstItem="fA8-RK-g0n" firstAttribute="top" secondItem="7hG-Zn-2Dz" secondAttribute="bottom" constant="8" id="8TM-lV-uB5"/>
+                            <constraint firstItem="fA8-RK-g0n" firstAttribute="leading" secondItem="nUd-1n-A7z" secondAttribute="leading" id="nu3-VO-FU6"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="PDg-iO-Xf4"/>
+                    <tabBarItem key="tabBarItem" title="Legislators" id="4xa-vs-VSO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU0-AO-lRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
