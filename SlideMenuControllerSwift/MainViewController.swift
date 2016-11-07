@@ -13,6 +13,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func openMenu(_ sender: UIBarButtonItem) {
+        self.slideMenuController()?.openLeft()
+    }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
     }
@@ -20,6 +23,8 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+        self.slideMenuController()?.addLeftGestures()
+        self.slideMenuController()?.addRightGestures()
     }
 
     override func didReceiveMemoryWarning() {
