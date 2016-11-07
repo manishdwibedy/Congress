@@ -17,6 +17,8 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     var selectedIndex = 0
     
     @IBOutlet weak var legislators: UITableView!
+    
+    var stateList = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,9 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                         
                         if let state_name = subJson["state_name"].string {
                             legislator["state_name"] = state_name
+                            if !self.stateList.contains(state_name){
+                                self.stateList.append(state_name)
+                            }
                         }
                         
                         if let bioguide_id = subJson["bioguide_id"].string {
