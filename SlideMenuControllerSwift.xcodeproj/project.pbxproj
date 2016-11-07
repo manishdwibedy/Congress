@@ -15,6 +15,7 @@
 		5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */; };
 		5BC08ED01DD022D20010D1B7 /* LegHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECF1DD022D20010D1B7 /* LegHouseViewController.swift */; };
 		5BC08ED21DD022E90010D1B7 /* LegSenateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ED11DD022E90010D1B7 /* LegSenateViewController.swift */; };
+		5BC08ED51DD0253F0010D1B7 /* NewBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ED41DD0253F0010D1B7 /* NewBillsViewController.swift */; };
 		C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E6461A315E87003B7CC7 /* AppDelegate.swift */; };
 		C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C539E6481A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld */; };
 		C539E64C1A315E87003B7CC7 /* LegislatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E64B1A315E87003B7CC7 /* LegislatorViewController.swift */; };
@@ -60,6 +61,7 @@
 		5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBillsViewController.swift; sourceTree = "<group>"; };
 		5BC08ECF1DD022D20010D1B7 /* LegHouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegHouseViewController.swift; sourceTree = "<group>"; };
 		5BC08ED11DD022E90010D1B7 /* LegSenateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegSenateViewController.swift; sourceTree = "<group>"; };
+		5BC08ED41DD0253F0010D1B7 /* NewBillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBillsViewController.swift; sourceTree = "<group>"; };
 		C539E6411A315E87003B7CC7 /* SlideMenuControllerSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideMenuControllerSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C539E6451A315E87003B7CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C539E6461A315E87003B7CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,27 @@
 				0E75C5A41BE3CAFE00844634 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BC08ED31DD025290010D1B7 /* Legislators */ = {
+			isa = PBXGroup;
+			children = (
+				C539E64B1A315E87003B7CC7 /* LegislatorViewController.swift */,
+				5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */,
+				5BC08ECF1DD022D20010D1B7 /* LegHouseViewController.swift */,
+				5BC08ED11DD022E90010D1B7 /* LegSenateViewController.swift */,
+			);
+			name = Legislators;
+			sourceTree = "<group>";
+		};
+		5BC08ED61DD025800010D1B7 /* Bills */ = {
+			isa = PBXGroup;
+			children = (
+				5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */,
+				5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */,
+				5BC08ED41DD0253F0010D1B7 /* NewBillsViewController.swift */,
+			);
+			name = Bills;
 			sourceTree = "<group>";
 		};
 		C539E6381A315E87003B7CC7 = {
@@ -220,17 +243,13 @@
 		C5C1CE631A70F7C400B6E411 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C539E64B1A315E87003B7CC7 /* LegislatorViewController.swift */,
+				5BC08ED31DD025290010D1B7 /* Legislators */,
 				C539E66B1A316C78003B7CC7 /* MenuViewController.swift */,
 				C539E64D1A315E87003B7CC7 /* Main.storyboard */,
 				C5BF6A851BEF4C080064C18E /* SubContentsViewController.swift */,
 				C5BF6A891BF3335D0064C18E /* SubContentsViewController.storyboard */,
 				C5BF6A8B1BF340020064C18E /* ExSlideMenuController.swift */,
-				5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */,
-				5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */,
-				5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */,
-				5BC08ECF1DD022D20010D1B7 /* LegHouseViewController.swift */,
-				5BC08ED11DD022E90010D1B7 /* LegSenateViewController.swift */,
+				5BC08ED61DD025800010D1B7 /* Bills */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -409,6 +428,7 @@
 				5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */,
 				C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */,
 				5BC08ED01DD022D20010D1B7 /* LegHouseViewController.swift in Sources */,
+				5BC08ED51DD0253F0010D1B7 /* NewBillsViewController.swift in Sources */,
 				5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */,
 				C5BF6A8C1BF340020064C18E /* ExSlideMenuController.swift in Sources */,
 				C5C1CE5D1A70F27500B6E411 /* BaseTableViewCell.swift in Sources */,
