@@ -34,7 +34,7 @@ class MenuViewController : UIViewController, LeftMenuProtocol {
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let billsViewController = storyboard.instantiateViewController(withIdentifier: "SwiftViewController") as! UITabBarController
+        let billsViewController = storyboard.instantiateViewController(withIdentifier: "Bills") as! UITabBarController
         self.billsViewController = billsViewController
         
         self.tableView.registerCellClass(BaseTableViewCell.self)

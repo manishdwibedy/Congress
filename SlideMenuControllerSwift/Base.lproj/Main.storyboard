@@ -12,7 +12,7 @@
         <!--Menu View Controller-->
         <scene sceneID="Nq8-8X-A5v">
             <objects>
-                <viewController storyboardIdentifier="LeftViewController" id="Mog-8S-rDV" customClass="MenuViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" id="Mog-8S-rDV" customClass="MenuViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ojD-hk-v0s"/>
                         <viewControllerLayoutGuide type="bottom" id="hXM-FI-ON0"/>
@@ -175,7 +175,7 @@
         <!--Legislator View Controller-->
         <scene sceneID="RMV-uD-su7">
             <objects>
-                <tabBarController storyboardIdentifier="MainViewController" id="drs-uX-qyB" customClass="LegislatorViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Legislators" id="drs-uX-qyB" customClass="LegislatorViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gqR-Tc-s4O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -276,7 +276,7 @@
         <!--Bills View Controller-->
         <scene sceneID="oco-un-fOQ">
             <objects>
-                <tabBarController storyboardIdentifier="SwiftViewController" id="XVu-xz-fz4" customClass="BillsViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Bills" id="XVu-xz-fz4" customClass="BillsViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TqN-7D-v1y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
