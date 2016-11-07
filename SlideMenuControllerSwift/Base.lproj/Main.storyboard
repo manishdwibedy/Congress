@@ -300,19 +300,44 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="py9-xu-fdo">
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="G4E-T4-IQL">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G4E-T4-IQL" id="fWj-ak-uMe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5zM-8d-icE" id="1jY-fg-E68"/>
+                                    <outlet property="delegate" destination="5zM-8d-icE" id="Cuy-Ss-y3Z"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uWH-nV-DmR" firstAttribute="top" secondItem="HfN-2W-u41" secondAttribute="bottom" constant="8" id="4IQ-zs-Kw3"/>
                             <constraint firstAttribute="trailing" secondItem="uWH-nV-DmR" secondAttribute="trailing" id="5Sc-gR-eik"/>
+                            <constraint firstItem="py9-xu-fdo" firstAttribute="leading" secondItem="fg2-Sc-jSm" secondAttribute="leading" id="GZ7-nw-g70"/>
+                            <constraint firstAttribute="trailing" secondItem="py9-xu-fdo" secondAttribute="trailing" id="H42-3F-CDc"/>
                             <constraint firstItem="uWH-nV-DmR" firstAttribute="leading" secondItem="fg2-Sc-jSm" secondAttribute="leading" id="PPP-2O-BQG"/>
+                            <constraint firstItem="py9-xu-fdo" firstAttribute="top" secondItem="uWH-nV-DmR" secondAttribute="bottom" id="WD2-3M-jR7"/>
+                            <constraint firstItem="aHm-XR-exS" firstAttribute="top" secondItem="py9-xu-fdo" secondAttribute="bottom" id="zmP-6i-Vk8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="State" id="a9A-ng-Ghp"/>
+                    <connections>
+                        <outlet property="legislators" destination="py9-xu-fdo" id="rTp-EX-sDz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTM-wE-T0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="-864"/>
+            <point key="canvasLocation" x="348" y="-864.01799100449784"/>
         </scene>
         <!--Legislator View Controller-->
         <scene sceneID="RMV-uD-su7">
