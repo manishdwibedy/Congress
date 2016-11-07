@@ -367,8 +367,8 @@
                                     <constraint firstAttribute="height" constant="44" id="w4J-yV-dIY"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="O0q-WH-4rS">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="Gbs-D8-2gW">
+                                    <navigationItem title="Committee" id="O0q-WH-4rS">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="Gbs-D8-2gW">
                                             <connections>
                                                 <action selector="openMenu:" destination="WRY-ez-mGF" id="YSV-mJ-UlD"/>
                                             </connections>
@@ -408,8 +408,8 @@
                                     <constraint firstAttribute="height" constant="44" id="5Pd-c3-jjJ"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="mRR-Le-m4h">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="o2F-mu-aXh">
+                                    <navigationItem title="Committee" id="mRR-Le-m4h">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="o2F-mu-aXh">
                                             <connections>
                                                 <action selector="openMenu:" destination="Mhv-DD-WvD" id="rov-bk-2Vc"/>
                                             </connections>
@@ -449,8 +449,8 @@
                                     <constraint firstAttribute="height" constant="44" id="Mi5-51-pIo"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="rfd-DG-ew9">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="AoK-Xl-jYQ">
+                                    <navigationItem title="Committee" id="rfd-DG-ew9">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="AoK-Xl-jYQ">
                                             <connections>
                                                 <action selector="openMenu:" destination="zTT-0q-8Lr" id="Fxf-Y7-RlN"/>
                                             </connections>
