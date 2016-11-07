@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class LegStateViewController: UIViewController {
     
@@ -19,8 +20,10 @@ class LegStateViewController: UIViewController {
             print(response.data)     // server data
             print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            if((response.result.value) != nil) {
+                let swiftyJsonVar = JSON(response.result.value!)
+                print("Teting")
+                print(swiftyJsonVar["origin"])
             }
         }
     }
