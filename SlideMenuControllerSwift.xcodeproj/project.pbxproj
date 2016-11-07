@@ -23,9 +23,7 @@
 		C5498C801BE897660076A7C5 /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5498C7F1BE897660076A7C5 /* ImageHeaderView.xib */; };
 		C5498C821BE8994F0076A7C5 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498C811BE8994F0076A7C5 /* UIImageView.swift */; };
 		C5BA8AA61A43E2EF00863FB9 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8AA51A43E2EF00863FB9 /* SlideMenuController.swift */; };
-		C5BD39DA1A6CD12300D0AF95 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD39D91A6CD12300D0AF95 /* SwiftViewController.swift */; };
-		C5BD39DC1A6CD15700D0AF95 /* JavaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD39DB1A6CD15700D0AF95 /* JavaViewController.swift */; };
-		C5BD39DE1A6CD17B00D0AF95 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD39DD1A6CD17B00D0AF95 /* GoViewController.swift */; };
+		C5BD39DE1A6CD17B00D0AF95 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD39DD1A6CD17B00D0AF95 /* SwiftViewController.swift */; };
 		C5BD39E01A6CDC8100D0AF95 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BD39DF1A6CDC8100D0AF95 /* UIViewController.swift */; };
 		C5BF6A821BEEF1A70064C18E /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BF6A811BEEF1A70064C18E /* DataTableViewCell.swift */; };
 		C5BF6A841BEEF1E70064C18E /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BF6A831BEEF1E70064C18E /* DataTableViewCell.xib */; };
@@ -33,7 +31,6 @@
 		C5BF6A8A1BF3335D0064C18E /* SubContentsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5BF6A891BF3335D0064C18E /* SubContentsViewController.storyboard */; };
 		C5BF6A8C1BF340020064C18E /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BF6A8B1BF340020064C18E /* ExSlideMenuController.swift */; };
 		C5BF6A8E1BF34A8B0064C18E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BF6A8D1BF34A8B0064C18E /* UIApplication.swift */; };
-		C5C1CE5B1A70DADF00B6E411 /* NonMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1CE5A1A70DADF00B6E411 /* NonMenuController.swift */; };
 		C5C1CE5D1A70F27500B6E411 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1CE5C1A70F27500B6E411 /* BaseTableViewCell.swift */; };
 		C5C1CE5F1A70F2FD00B6E411 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1CE5E1A70F2FD00B6E411 /* String.swift */; };
 		C5C1CE611A70F3B600B6E411 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1CE601A70F3B600B6E411 /* UITableViewExtension.swift */; };
@@ -73,9 +70,7 @@
 		C5498C7F1BE897660076A7C5 /* ImageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageHeaderView.xib; sourceTree = "<group>"; };
 		C5498C811BE8994F0076A7C5 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		C5BA8AA51A43E2EF00863FB9 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideMenuController.swift; path = Source/SlideMenuController.swift; sourceTree = "<group>"; };
-		C5BD39D91A6CD12300D0AF95 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
-		C5BD39DB1A6CD15700D0AF95 /* JavaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavaViewController.swift; sourceTree = "<group>"; };
-		C5BD39DD1A6CD17B00D0AF95 /* GoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
+		C5BD39DD1A6CD17B00D0AF95 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		C5BD39DF1A6CDC8100D0AF95 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C5BF6A811BEEF1A70064C18E /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewCell.swift; sourceTree = "<group>"; };
 		C5BF6A831BEEF1E70064C18E /* DataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
@@ -83,7 +78,6 @@
 		C5BF6A891BF3335D0064C18E /* SubContentsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubContentsViewController.storyboard; sourceTree = "<group>"; };
 		C5BF6A8B1BF340020064C18E /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSlideMenuController.swift; sourceTree = "<group>"; };
 		C5BF6A8D1BF34A8B0064C18E /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		C5C1CE5A1A70DADF00B6E411 /* NonMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonMenuController.swift; sourceTree = "<group>"; };
 		C5C1CE5C1A70F27500B6E411 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		C5C1CE5E1A70F2FD00B6E411 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C5C1CE601A70F3B600B6E411 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -226,10 +220,7 @@
 				C539E64B1A315E87003B7CC7 /* MainViewController.swift */,
 				C539E66B1A316C78003B7CC7 /* LeftViewController.swift */,
 				C539E66D1A316F5F003B7CC7 /* RightViewController.swift */,
-				C5BD39D91A6CD12300D0AF95 /* SwiftViewController.swift */,
-				C5BD39DB1A6CD15700D0AF95 /* JavaViewController.swift */,
-				C5BD39DD1A6CD17B00D0AF95 /* GoViewController.swift */,
-				C5C1CE5A1A70DADF00B6E411 /* NonMenuController.swift */,
+				C5BD39DD1A6CD17B00D0AF95 /* SwiftViewController.swift */,
 				C539E64D1A315E87003B7CC7 /* Main.storyboard */,
 				C5BF6A851BEF4C080064C18E /* SubContentsViewController.swift */,
 				C5BF6A891BF3335D0064C18E /* SubContentsViewController.storyboard */,
@@ -406,7 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5BF6A8E1BF34A8B0064C18E /* UIApplication.swift in Sources */,
-				C5BD39DE1A6CD17B00D0AF95 /* GoViewController.swift in Sources */,
+				C5BD39DE1A6CD17B00D0AF95 /* SwiftViewController.swift in Sources */,
 				C539E64C1A315E87003B7CC7 /* MainViewController.swift in Sources */,
 				C5BD39E01A6CDC8100D0AF95 /* UIViewController.swift in Sources */,
 				C5C1CE611A70F3B600B6E411 /* UITableViewExtension.swift in Sources */,
@@ -419,15 +410,12 @@
 				C5F179D21BEB2FAF00EEDD9A /* UIColor.swift in Sources */,
 				C5F179CE1BEB2A5900EEDD9A /* UIImage.swift in Sources */,
 				C5498C821BE8994F0076A7C5 /* UIImageView.swift in Sources */,
-				C5C1CE5B1A70DADF00B6E411 /* NonMenuController.swift in Sources */,
 				C5498C7E1BE897250076A7C5 /* ImageHeaderView.swift in Sources */,
 				C5BF6A861BEF4C080064C18E /* SubContentsViewController.swift in Sources */,
-				C5BD39DC1A6CD15700D0AF95 /* JavaViewController.swift in Sources */,
 				C5BA8AA61A43E2EF00863FB9 /* SlideMenuController.swift in Sources */,
 				C539E66E1A316F5F003B7CC7 /* RightViewController.swift in Sources */,
 				C5C1CE5F1A70F2FD00B6E411 /* String.swift in Sources */,
 				C5F179D01BEB2CB500EEDD9A /* UIView.swift in Sources */,
-				C5BD39DA1A6CD12300D0AF95 /* SwiftViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
