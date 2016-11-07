@@ -34,6 +34,11 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                     if let last_name = subJson["last_name"].string {
                         legislator["last_name"] = last_name
                     }
+                    
+                    if let state_name = subJson["state_name"].string {
+                        legislator["state_name"] = state_name
+                    }
+                    
                     self.legislator_list.append(legislator)
                 }
                 self.legislators.reloadData()
@@ -57,12 +62,15 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         
         let legislator = self.legislator_list[indexPath.row]
         cell.textLabel?.text = legislator["first_name"]! + " " + legislator["last_name"]!
+        cell.detailTextLabel?.text = legislator["state_name"]
+        
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You selected cell #\(indexPath.row)!")
-
     }
+    
+    
 }
