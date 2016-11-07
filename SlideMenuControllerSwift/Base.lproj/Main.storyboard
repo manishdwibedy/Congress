@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="-504" y="-1831"/>
         </scene>
-        <!--C-->
+        <!--Senate-->
         <scene sceneID="dg7-Vf-Mqk">
             <objects>
                 <viewController id="HAN-Xl-0bt" sceneMemberID="viewController">
@@ -62,13 +62,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="C" id="M3Z-Fj-qSK"/>
+                    <tabBarItem key="tabBarItem" title="Senate" id="M3Z-Fj-qSK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORb-Ln-QLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-708" y="346"/>
         </scene>
-        <!--B-->
+        <!--House-->
         <scene sceneID="31t-pg-csA">
             <objects>
                 <viewController id="pQb-ej-SCu" sceneMemberID="viewController">
@@ -81,13 +81,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="B" id="XaI-H7-Z02"/>
+                    <tabBarItem key="tabBarItem" title="House" id="XaI-H7-Z02"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr6-xq-CFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="348" y="-209"/>
         </scene>
-        <!--A-->
+        <!--State-->
         <scene sceneID="tRO-I4-YKF">
             <objects>
                 <viewController id="5zM-8d-icE" customClass="LegStateViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +115,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="A" id="a9A-ng-Ghp"/>
+                    <tabBarItem key="tabBarItem" title="State" id="a9A-ng-Ghp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTM-wE-T0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="-602" y="-536"/>
         </scene>
-        <!--Item 2-->
+        <!--Active-->
         <scene sceneID="7F6-xc-Qd7">
             <objects>
                 <viewController id="v8X-fd-oPg" sceneMemberID="viewController">
@@ -153,13 +153,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="xfv-hc-u9k"/>
+                    <tabBarItem key="tabBarItem" title="Active" id="QbF-ck-nad"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRO-tZ-YEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-417" y="1576"/>
         </scene>
-        <!--Item 1-->
+        <!--New-->
         <scene sceneID="VwK-rZ-zSX">
             <objects>
                 <viewController id="ezE-kw-Mlx" customClass="ActiveBillsViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,16 +187,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="eTP-Th-lGA"/>
+                    <tabBarItem key="tabBarItem" title="New" id="jlU-7k-hV3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhA-QG-ZI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-417" y="921"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Bills View Controller-->
         <scene sceneID="oco-un-fOQ">
             <objects>
-                <tabBarController storyboardIdentifier="SwiftViewController" id="XVu-xz-fz4" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="SwiftViewController" id="XVu-xz-fz4" customClass="BillsViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="TqN-7D-v1y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
