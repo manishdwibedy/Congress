@@ -43,6 +43,47 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                         legislator["bioguide_id"] = bioguide_id
                     }
                     
+                    if let birthday = subJson["birthday"].string {
+                        legislator["birthday"] = birthday
+                    }
+                    
+                    if let gender = subJson["gender"].string {
+                        legislator["gender"] = gender
+                    }
+                    
+                    if let chamber = subJson["chamber"].string {
+                        legislator["chamber"] = chamber
+                    }
+                    
+                    if let fax = subJson["fax"].string {
+                        legislator["fax"] = fax
+                    }
+                    
+                    if let twitter_id = subJson["twitter_id"].string {
+                        legislator["twitter_id"] = twitter_id
+                    }
+                    
+                    if let website = subJson["website"].string {
+                        legislator["website"] = website
+                    }
+                    
+                    if let office = subJson["office"].string {
+                        legislator["office"] = office
+                    }
+                    
+                    if let term_end = subJson["term_end"].string {
+                        legislator["term_end"] = term_end
+                    }
+                    
+                    if let term_start = subJson["term_start"].string {
+                        legislator["term_start"] = term_start
+                    }
+                    
+                    if let party = subJson["party"].string {
+                        legislator["party"] = party
+                    }
+
+                    //party
                     self.legislator_list.append(legislator)
                 }
                 self.legislators.reloadData()
