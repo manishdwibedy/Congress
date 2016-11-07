@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // create viewController code...
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! LegislatorViewController
-        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as! MenuViewController
+        let legislatorsViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! LegislatorViewController
+        let menuViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as! MenuViewController
         
-        leftViewController.legislatorsViewController = mainViewController
+        menuViewController.legislatorsViewController = legislatorsViewController
         
-        let slideMenuController = ExSlideMenuController(mainViewController:mainViewController, leftMenuViewController: leftViewController)
+        let slideMenuController = ExSlideMenuController(mainViewController:legislatorsViewController, leftMenuViewController: menuViewController)
         slideMenuController.automaticallyAdjustsScrollViewInsets = true
-        slideMenuController.delegate = mainViewController
+        slideMenuController.delegate = legislatorsViewController
         self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
         self.window?.rootViewController = slideMenuController
         self.window?.makeKeyAndVisible()
