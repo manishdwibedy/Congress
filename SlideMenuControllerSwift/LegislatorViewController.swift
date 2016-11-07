@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController, SlideMenuControllerDelegate {
+class LegislatorViewController: UITabBarController, SlideMenuControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()

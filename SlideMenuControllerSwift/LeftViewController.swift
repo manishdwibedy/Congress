@@ -22,9 +22,6 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     var menus = ["Main", "Swift"]
     var mainViewController: UIViewController!
     var swiftViewController: UITabBarController!
-    var javaViewController: UIViewController!
-    var goViewController: UIViewController!
-    var nonMenuViewController: UIViewController!
     var imageHeaderView: ImageHeaderView!
     
     required init?(coder aDecoder: NSCoder) {

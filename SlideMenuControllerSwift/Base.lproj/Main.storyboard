@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="348" y="-864"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Legislator View Controller-->
         <scene sceneID="RMV-uD-su7">
             <objects>
-                <tabBarController storyboardIdentifier="MainViewController" id="drs-uX-qyB" customClass="MainViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" id="drs-uX-qyB" customClass="LegislatorViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gqR-Tc-s4O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
