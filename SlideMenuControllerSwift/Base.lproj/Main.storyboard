@@ -66,7 +66,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Legislators" id="kZU-f4-wnG">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="WJq-Ng-YVM">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="WJq-Ng-YVM">
                                             <connections>
                                                 <action selector="openMenu:" destination="HAN-Xl-0bt" id="3VL-F8-dp9"/>
                                             </connections>
@@ -100,7 +100,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Legislators" id="Pfp-c9-jrR">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="hIV-jw-Joh">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="hIV-jw-Joh">
                                             <connections>
                                                 <action selector="openMenu:" destination="pQb-ej-SCu" id="LHs-ab-65Y"/>
                                             </connections>
@@ -134,7 +134,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Legislators" id="z54-MZ-hZV">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="WTZ-Qn-Mgr">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="WTZ-Qn-Mgr">
                                             <connections>
                                                 <action selector="openMenu:" destination="5zM-8d-icE" id="Cwc-Im-OWd"/>
                                             </connections>
@@ -187,7 +187,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Bills" id="la7-dv-tUG">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="ctQ-D4-kA0">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="ctQ-D4-kA0">
                                             <connections>
                                                 <action selector="openMenu:" destination="v8X-fd-oPg" id="9VS-23-SY0"/>
                                             </connections>
@@ -221,7 +221,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Bills" id="Mqt-xN-idg">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="WbG-Qf-HEh">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="WbG-Qf-HEh">
                                             <connections>
                                                 <action selector="openMenu:" destination="ezE-kw-Mlx" id="hvO-zB-0nA"/>
                                             </connections>
@@ -257,4 +257,7 @@
             <point key="canvasLocation" x="-1418" y="1496"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_menu_black_24dp" width="24" height="24"/>
+    </resources>
 </document>
