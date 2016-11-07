@@ -8,8 +8,8 @@
 import UIKit
 
 enum LeftMenu: Int {
-    case main = 0
-    case swift
+    case legislators = 0
+    case bills
 }
 
 protocol LeftMenuProtocol : class {
@@ -19,9 +19,9 @@ protocol LeftMenuProtocol : class {
 class MenuViewController : UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Main", "Swift"]
-    var mainViewController: UIViewController!
-    var swiftViewController: UITabBarController!
+    var menus = ["Legislators", "Bills"]
+    var legislatorsViewController: UIViewController!
+    var billsViewController: UITabBarController!
     var imageHeaderView: ImageHeaderView!
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,8 +34,8 @@ class MenuViewController : UIViewController, LeftMenuProtocol {
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let swiftViewController = storyboard.instantiateViewController(withIdentifier: "SwiftViewController") as! UITabBarController
-        self.swiftViewController = swiftViewController
+        let billsViewController = storyboard.instantiateViewController(withIdentifier: "SwiftViewController") as! UITabBarController
+        self.billsViewController = billsViewController
         
         self.tableView.registerCellClass(BaseTableViewCell.self)
         
@@ -55,10 +55,10 @@ class MenuViewController : UIViewController, LeftMenuProtocol {
     
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
-        case .main:
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-        case .swift:
-            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
+        case .legislators:
+            self.slideMenuController()?.changeMainViewController(self.legislatorsViewController, close: true)
+        case .bills:
+            self.slideMenuController()?.changeMainViewController(self.billsViewController, close: true)
         }
     }
 }
@@ -67,7 +67,7 @@ extension MenuViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .main, .swift:
+            case .legislators, .bills:
                 return BaseTableViewCell.height()
             }
         }
@@ -97,7 +97,7 @@ extension MenuViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .main, .swift:
+            case .legislators, .bills:
                 let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menus[indexPath.row])
                 return cell

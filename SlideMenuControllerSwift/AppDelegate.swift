@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! LegislatorViewController
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewController") as! MenuViewController
         
-        leftViewController.mainViewController = mainViewController
+        leftViewController.legislatorsViewController = mainViewController
         
         let slideMenuController = ExSlideMenuController(mainViewController:mainViewController, leftMenuViewController: leftViewController)
         slideMenuController.automaticallyAdjustsScrollViewInsets = true
