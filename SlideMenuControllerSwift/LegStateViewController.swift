@@ -14,6 +14,9 @@ class LegStateViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func openMenu(_ sender: UIBarButtonItem) {
+        self.slideMenuController()?.openLeft()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
