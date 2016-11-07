@@ -52,7 +52,7 @@
         <!--Senate-->
         <scene sceneID="dg7-Vf-Mqk">
             <objects>
-                <viewController id="HAN-Xl-0bt" sceneMemberID="viewController">
+                <viewController id="HAN-Xl-0bt" customClass="LegSenateViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hff-iO-Hda"/>
                         <viewControllerLayoutGuide type="bottom" id="2l2-29-ts7"/>
@@ -60,6 +60,21 @@
                     <view key="view" contentMode="scaleToFill" id="AQf-YQ-HIq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3U2-mZ-CeS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="kZU-f4-wnG">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="WJq-Ng-YVM">
+                                            <connections>
+                                                <action selector="openMenu:" destination="HAN-Xl-0bt" id="3VL-F8-dp9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Senate" id="M3Z-Fj-qSK"/>
@@ -71,7 +86,7 @@
         <!--House-->
         <scene sceneID="31t-pg-csA">
             <objects>
-                <viewController id="pQb-ej-SCu" sceneMemberID="viewController">
+                <viewController id="pQb-ej-SCu" customClass="LegHouseViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ita-6k-Zqu"/>
                         <viewControllerLayoutGuide type="bottom" id="sik-K8-K9D"/>
@@ -79,6 +94,21 @@
                     <view key="view" contentMode="scaleToFill" id="ztN-CQ-ije">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MVZ-TJ-l97">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Pfp-c9-jrR">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="hIV-jw-Joh">
+                                            <connections>
+                                                <action selector="openMenu:" destination="pQb-ej-SCu" id="LHs-ab-65Y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="House" id="XaI-H7-Z02"/>
@@ -210,56 +240,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfz-Du-PiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1372" y="1249"/>
-        </scene>
-        <!--Swift View Controller1-->
-        <scene sceneID="qDe-KX-ho1">
-            <objects>
-                <viewController storyboardIdentifier="SwiftViewController1" id="I9w-x4-mAi" customClass="SwiftViewController1" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jtW-TN-dF4"/>
-                        <viewControllerLayoutGuide type="bottom" id="2n0-fL-47k"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FDk-dB-c3B">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-vm-zME">
-                                <rect key="frame" x="180" y="100" width="240" height="93"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="dAY-to-35w"/>
-                                    <constraint firstAttribute="width" constant="240" id="suh-ng-jJw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iM2-zG-XqI">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="ZL3-iE-pfL">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="06m-vE-Qee">
-                                            <connections>
-                                                <action selector="openMenu:" destination="I9w-x4-mAi" id="c2O-GF-v8U"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="0.89411764705882357" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Bao-vm-zME" firstAttribute="top" secondItem="jtW-TN-dF4" secondAttribute="bottom" constant="80" id="Byq-zF-AOE"/>
-                            <constraint firstAttribute="centerX" secondItem="Bao-vm-zME" secondAttribute="centerX" id="jGK-wg-NME"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Wgh-E1-vlx"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0gN-ZX-EvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="118" y="1437"/>
         </scene>
     </scenes>
 </document>
