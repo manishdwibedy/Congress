@@ -13,6 +13,7 @@ import SwiftyJSON
 class LegStateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     var legislator_list = [[String:String]]()
+    var selectedIndex = 0
     
     @IBOutlet weak var legislators: UITableView!
     override func viewDidLoad() {
@@ -119,5 +120,17 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "show_legislator", sender: nil)
+//        self.prepareForSegue(segue: "show_legislator", sender: nil)
+    }
+    
+    func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if segue!.identifier == "show_legislator" {
+            let viewController:LegislatorDetailViewController = segue!.destination as! LegislatorDetailViewController
+            
+            viewController.legislatorDetail = self.legislator_list[self.selectedIndex]
+        }
+        
     }
 }

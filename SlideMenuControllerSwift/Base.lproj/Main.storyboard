@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -349,11 +350,61 @@
                     <tabBarItem key="tabBarItem" title="State" id="a9A-ng-Ghp"/>
                     <connections>
                         <outlet property="legislators" destination="py9-xu-fdo" id="rTp-EX-sDz"/>
+                        <segue destination="Pgf-0M-WFC" kind="showDetail" identifier="show_legislator" id="xNb-Ug-sbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTM-wE-T0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="348" y="-864.01799100449784"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bKW-kH-gaB">
+            <objects>
+                <viewController id="Pgf-0M-WFC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wPE-NF-TNP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Ea-gF-xVk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jYF-7p-R0k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Tu-FK-6Y1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ble-cI-ock"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="uUS-iY-Lei">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="u1y-sM-eJz">
+                                            <connections>
+                                                <segue destination="5zM-8d-icE" kind="showDetail" id="Fb7-GG-RG3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2mV-nN-TCJ">
+                                <rect key="frame" x="66" y="112" width="243" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="g9q-Xd-Oor"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0Tu-FK-6Y1" secondAttribute="trailing" id="7zB-4S-34p"/>
+                            <constraint firstItem="0Tu-FK-6Y1" firstAttribute="top" secondItem="wPE-NF-TNP" secondAttribute="bottom" constant="8" id="DKP-iD-e7a"/>
+                            <constraint firstItem="2mV-nN-TCJ" firstAttribute="top" secondItem="0Tu-FK-6Y1" secondAttribute="bottom" constant="40" id="ED4-n4-R9w"/>
+                            <constraint firstItem="2mV-nN-TCJ" firstAttribute="leading" secondItem="jYF-7p-R0k" secondAttribute="leadingMargin" constant="50" id="QLx-by-fcU"/>
+                            <constraint firstItem="0Tu-FK-6Y1" firstAttribute="leading" secondItem="jYF-7p-R0k" secondAttribute="leading" id="R2K-jH-3pO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2mV-nN-TCJ" secondAttribute="trailing" constant="50" id="gPO-ED-dqR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TB-jv-nkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="-1226"/>
         </scene>
         <!--Legislator View Controller-->
         <scene sceneID="RMV-uD-su7">
@@ -620,4 +671,7 @@
     <resources>
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fb7-GG-RG3"/>
+    </inferredMetricsTieBreakers>
 </document>
