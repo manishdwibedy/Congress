@@ -162,7 +162,7 @@
         <!--Item 1-->
         <scene sceneID="VwK-rZ-zSX">
             <objects>
-                <viewController id="ezE-kw-Mlx" sceneMemberID="viewController">
+                <viewController id="ezE-kw-Mlx" customClass="ActiveBillsViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iev-2A-aRm"/>
                         <viewControllerLayoutGuide type="bottom" id="tWg-aH-Uwo"/>
@@ -170,6 +170,21 @@
                     <view key="view" contentMode="scaleToFill" id="Hnd-xz-yxZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SE4-n0-YVS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Mqt-xN-idg">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="WbG-Qf-HEh">
+                                            <connections>
+                                                <action selector="openMenu:" destination="ezE-kw-Mlx" id="gNy-uA-hSB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="eTP-Th-lGA"/>

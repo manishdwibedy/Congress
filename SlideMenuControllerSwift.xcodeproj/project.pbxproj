@@ -12,6 +12,7 @@
 		0EB8EBFF1BE3CF3C00BC2A99 /* SlideMenuControllerSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E75C5A51BE3CAFE00844634 /* SlideMenuControllerSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */; };
 		5BC08ECC1DD01C810010D1B7 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */; };
+		5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */; };
 		C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E6461A315E87003B7CC7 /* AppDelegate.swift */; };
 		C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C539E6481A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld */; };
 		C539E64C1A315E87003B7CC7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E64B1A315E87003B7CC7 /* MainViewController.swift */; };
@@ -55,6 +56,7 @@
 		0E75C5A51BE3CAFE00844634 /* SlideMenuControllerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideMenuControllerSwift.h; path = Source/SlideMenuControllerSwift.h; sourceTree = "<group>"; };
 		5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegStateViewController.swift; sourceTree = "<group>"; };
 		5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
+		5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBillsViewController.swift; sourceTree = "<group>"; };
 		C539E6411A315E87003B7CC7 /* SlideMenuControllerSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideMenuControllerSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C539E6451A315E87003B7CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C539E6461A315E87003B7CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				C5BF6A8B1BF340020064C18E /* ExSlideMenuController.swift */,
 				5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */,
 				5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */,
+				5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				C5BD39DE1A6CD17B00D0AF95 /* SwiftViewController.swift in Sources */,
 				C539E64C1A315E87003B7CC7 /* MainViewController.swift in Sources */,
 				C5C1CE611A70F3B600B6E411 /* UITableViewExtension.swift in Sources */,
+				5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */,
 				C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */,
 				5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */,
 				C5BF6A8C1BF340020064C18E /* ExSlideMenuController.swift in Sources */,
