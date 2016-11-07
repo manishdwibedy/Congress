@@ -7,15 +7,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func openMenu(_ sender: UIBarButtonItem) {
-        self.slideMenuController()?.openLeft()
-    }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
     }
