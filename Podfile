@@ -7,7 +7,7 @@ target 'SlideMenuControllerSwift' do
   # Pods for SlideMenuControllerSwift
 pod 'Alamofire', :git => 'https://github.com/Homely/Alamofire.git', :branch => 'ios8'  
  pod 'SwiftyJSON', :git =>'https://github.com/SwiftyJSON/SwiftyJSON.git'
-
+pod "SwiftSpinner"
 target 'SlideMenuControllerSwiftTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,9 +1,11 @@
 PODS:
   - Alamofire (4.0.1)
+  - SwiftSpinner (1.1.0)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Homely/Alamofire.git`, branch `ios8`)
+  - SwiftSpinner
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -23,8 +25,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: d8ab1487ca8accacde5d0c65ae8144bdf9a264b8
+  SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 3e61e4c4fbfb22383058f486157e0e4a5a61a8f3
+PODFILE CHECKSUM: 591d8b1072ce6b884746f063d8d15e6da852b967
 
 COCOAPODS: 1.2.0.beta.1
