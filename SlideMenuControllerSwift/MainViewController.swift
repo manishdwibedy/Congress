@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
+class MainViewController: UITabBarController, SlideMenuControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,40 +27,4 @@ class MainViewController: UITabBarController {
         super.didReceiveMemoryWarning()
     }
 
-}
-
-
-extension MainViewController : SlideMenuControllerDelegate {
-    
-    func leftWillOpen() {
-        print("SlideMenuControllerDelegate: leftWillOpen")
-    }
-    
-    func leftDidOpen() {
-        print("SlideMenuControllerDelegate: leftDidOpen")
-    }
-    
-    func leftWillClose() {
-        print("SlideMenuControllerDelegate: leftWillClose")
-    }
-    
-    func leftDidClose() {
-        print("SlideMenuControllerDelegate: leftDidClose")
-    }
-    
-    func rightWillOpen() {
-        print("SlideMenuControllerDelegate: rightWillOpen")
-    }
-    
-    func rightDidOpen() {
-        print("SlideMenuControllerDelegate: rightDidOpen")
-    }
-    
-    func rightWillClose() {
-        print("SlideMenuControllerDelegate: rightWillClose")
-    }
-    
-    func rightDidClose() {
-        print("SlideMenuControllerDelegate: rightDidClose")
-    }
 }
