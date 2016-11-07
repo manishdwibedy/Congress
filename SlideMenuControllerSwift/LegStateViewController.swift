@@ -14,16 +14,26 @@ class LegStateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request("https://httpbin.org/get").responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+        
+        Alamofire.request("http://localhost/congress.php?operation=legislators").responseJSON { response in
             
             if((response.result.value) != nil) {
                 let swiftyJsonVar = JSON(response.result.value!)
                 print("Teting")
-                print(swiftyJsonVar["origin"])
+                let results = swiftyJsonVar["results"]
+                
+                var legislators = [[String:String]]()
+                for (_, subJson) in results {
+                    var legislator = [String:String]()
+                    if let first_name = subJson["first_name"].string {
+                        legislator["first_name"] = first_name
+                    }
+                    
+                    if let last_name = subJson["last_name"].string {
+                        legislator["last_name"] = last_name
+                    }
+                    legislators.append(legislator)
+                }
             }
         }
     }
