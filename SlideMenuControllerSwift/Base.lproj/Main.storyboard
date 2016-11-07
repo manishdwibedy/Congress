@@ -298,13 +298,14 @@
                                                 <action selector="openMenu:" destination="5zM-8d-icE" id="Cwc-Im-OWd"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Filter" id="sy0-3f-OOW">
+                                            <connections>
+                                                <action selector="filterLegislators:" destination="5zM-8d-icE" id="VPZ-NO-AQJ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ude-od-vJ1">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="py9-xu-fdo">
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -339,6 +340,14 @@
                                     <outlet property="delegate" destination="5zM-8d-icE" id="Cuy-Ss-y3Z"/>
                                 </connections>
                             </tableView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ude-od-vJ1">
+                                <rect key="frame" x="0.0" y="36" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5zM-8d-icE" id="e01-SN-0t3"/>
+                                    <outlet property="delegate" destination="5zM-8d-icE" id="Tj8-RZ-AXn"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -354,6 +363,7 @@
                     <tabBarItem key="tabBarItem" title="State" id="a9A-ng-Ghp"/>
                     <connections>
                         <outlet property="legislators" destination="py9-xu-fdo" id="rTp-EX-sDz"/>
+                        <outlet property="stateFilter" destination="ude-od-vJ1" id="P0g-Uw-6U1"/>
                         <segue destination="Pgf-0M-WFC" kind="showDetail" identifier="show_legislator" id="xNb-Ug-sbn"/>
                     </connections>
                 </viewController>

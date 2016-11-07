@@ -11,16 +11,25 @@ import Alamofire
 import SwiftyJSON
 import SwiftSpinner
 
-class LegStateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class LegStateViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource  {
+    @available(iOS 2.0, *)
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
     
     var legislator_list = [[String:String]]()
     var selectedIndex = 0
     
+    @IBOutlet weak var stateFilter: UIPickerView!
     @IBOutlet weak var legislators: UITableView!
     
     var stateList = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.stateFilter.delegate = self
+        self.stateFilter.dataSource = self
         
         if legislator_list.count == 0 {
             SwiftSpinner.show("Connecting to satellite...")
@@ -97,6 +106,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                     SwiftSpinner.hide()
                     self.legislators.reloadData()
+                    self.stateFilter.reloadAllComponents()
                 }
             }
         }
@@ -143,5 +153,34 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
             viewController.legislatorDetail = self.legislator_list[self.selectedIndex]
         }
         
+    }
+    
+    
+    // The number of columns of data
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.stateList.count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.stateList[row]
+    }
+    
+    // Catpure the picker view selection
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // This method is triggered whenever the user makes a change to the picker selection.
+        // The parameter named row and component represents what was selected.
+        print(self.stateList[row])
+        self.stateFilter.isHidden = true
+        self.legislators.isHidden = false
+    }
+    @IBAction func filterLegislators(_ sender: UIBarButtonItem) {
+        self.stateFilter.isHidden = false
+        self.legislators.isHidden = true
     }
 }
