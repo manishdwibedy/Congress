@@ -349,7 +349,7 @@
             </objects>
             <point key="canvasLocation" x="-602" y="1136"/>
         </scene>
-        <!--Item-->
+        <!--Joint-->
         <scene sceneID="yee-hq-eCr">
             <objects>
                 <viewController id="WRY-ez-mGF" customClass="JointCommitteeViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -384,13 +384,13 @@
                             <constraint firstItem="hQZ-qs-bbC" firstAttribute="top" secondItem="cyP-uX-8R9" secondAttribute="bottom" constant="8" id="zQ0-Nt-GOZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="xeo-M0-Eco"/>
+                    <tabBarItem key="tabBarItem" title="Joint" id="PZd-2T-wvZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxB-Lx-iYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1697" y="2078"/>
         </scene>
-        <!--Item 2-->
+        <!--Senate-->
         <scene sceneID="t4r-AI-qsO">
             <objects>
                 <viewController id="Mhv-DD-WvD" customClass="SenateCommitteeViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -425,13 +425,13 @@
                             <constraint firstItem="7o7-ku-jiI" firstAttribute="top" secondItem="h9j-hy-Ut5" secondAttribute="bottom" constant="8" id="mwQ-Ta-3qH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Ijn-4c-8Qr"/>
+                    <tabBarItem key="tabBarItem" title="Senate" id="c9p-co-yYY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPl-19-Fa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2652" y="1620"/>
         </scene>
-        <!--Item 1-->
+        <!--House-->
         <scene sceneID="7HM-mQ-J5F">
             <objects>
                 <viewController id="zTT-0q-8Lr" customClass="HouseCommitteeViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -466,7 +466,7 @@
                             <constraint firstItem="Fze-us-0b5" firstAttribute="leading" secondItem="oCW-54-EIv" secondAttribute="leading" id="Rcn-Qt-6tn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="2l4-Ht-svb"/>
+                    <tabBarItem key="tabBarItem" title="House" id="Mhu-dO-9ha"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ron-Pi-ib6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
