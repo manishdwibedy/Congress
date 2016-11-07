@@ -140,10 +140,66 @@
             </objects>
             <point key="canvasLocation" x="-602" y="-536"/>
         </scene>
-        <!--Swift View Controller-->
+        <!--Item 2-->
+        <scene sceneID="7F6-xc-Qd7">
+            <objects>
+                <viewController id="v8X-fd-oPg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ma4-qf-F2u"/>
+                        <viewControllerLayoutGuide type="bottom" id="bt4-3Y-IUC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qBb-Uv-RMx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="xfv-hc-u9k"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRO-tZ-YEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-417" y="1576"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="VwK-rZ-zSX">
+            <objects>
+                <viewController id="ezE-kw-Mlx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iev-2A-aRm"/>
+                        <viewControllerLayoutGuide type="bottom" id="tWg-aH-Uwo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hnd-xz-yxZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="eTP-Th-lGA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhA-QG-ZI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-417" y="921"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="oco-un-fOQ">
+            <objects>
+                <tabBarController storyboardIdentifier="SwiftViewController" id="XVu-xz-fz4" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="TqN-7D-v1y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ezE-kw-Mlx" kind="relationship" relationship="viewControllers" id="rn5-c2-7L5"/>
+                        <segue destination="v8X-fd-oPg" kind="relationship" relationship="viewControllers" id="wUi-VE-du3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfz-Du-PiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1372" y="1249"/>
+        </scene>
+        <!--Swift View Controller1-->
         <scene sceneID="qDe-KX-ho1">
             <objects>
-                <viewController storyboardIdentifier="SwiftViewController" id="I9w-x4-mAi" customClass="SwiftViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwiftViewController1" id="I9w-x4-mAi" customClass="SwiftViewController1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jtW-TN-dF4"/>
                         <viewControllerLayoutGuide type="bottom" id="2n0-fL-47k"/>

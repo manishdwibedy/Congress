@@ -21,7 +21,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     @IBOutlet weak var tableView: UITableView!
     var menus = ["Main", "Swift"]
     var mainViewController: UIViewController!
-    var swiftViewController: UIViewController!
+    var swiftViewController: UITabBarController!
     var javaViewController: UIViewController!
     var goViewController: UIViewController!
     var nonMenuViewController: UIViewController!
@@ -37,7 +37,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
         self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let swiftViewController = storyboard.instantiateViewController(withIdentifier: "SwiftViewController") as! SwiftViewController
+        let swiftViewController = storyboard.instantiateViewController(withIdentifier: "SwiftViewController") as! UITabBarController
         self.swiftViewController = swiftViewController
         
         self.tableView.registerCellClass(BaseTableViewCell.self)
