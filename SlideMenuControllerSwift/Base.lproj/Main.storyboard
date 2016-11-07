@@ -186,7 +186,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="la7-dv-tUG">
+                                    <navigationItem title="Bills" id="la7-dv-tUG">
                                         <barButtonItem key="leftBarButtonItem" title="Item" id="ctQ-D4-kA0">
                                             <connections>
                                                 <action selector="openMenu:" destination="v8X-fd-oPg" id="9VS-23-SY0"/>
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRO-tZ-YEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-417" y="1576"/>
+            <point key="canvasLocation" x="-602" y="1857"/>
         </scene>
         <!--New-->
         <scene sceneID="VwK-rZ-zSX">
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhA-QG-ZI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-417" y="921"/>
+            <point key="canvasLocation" x="-602" y="1136"/>
         </scene>
         <!--Bills View Controller-->
         <scene sceneID="oco-un-fOQ">
@@ -254,7 +254,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfz-Du-PiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1372" y="1249"/>
+            <point key="canvasLocation" x="-1418" y="1496"/>
         </scene>
     </scenes>
 </document>
