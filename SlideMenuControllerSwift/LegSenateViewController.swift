@@ -99,6 +99,7 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
                         
                     }
                     SwiftSpinner.hide()
+                    self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) == ComparisonResult.orderedAscending })
                     self.legislatorTable.reloadData()
                 }
             }
