@@ -408,7 +408,7 @@
                                 <rect key="frame" x="16" y="302" width="343" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pfr-li-u5f">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Pfr-li-u5f" customClass="LegislatorDetailViewCell" customModule="SlideMenuControllerSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pfr-li-u5f" id="ZTE-vh-pV0">
@@ -431,8 +431,16 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="zt3-TA-1C4" id="dhX-ZQ-7QV"/>
+                                            <outlet property="value" destination="NzN-dB-DUE" id="ItS-dI-Yeh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pgf-0M-WFC" id="KsO-Df-hMq"/>
+                                    <outlet property="delegate" destination="Pgf-0M-WFC" id="1bR-qr-EZH"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -450,6 +458,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="legislatorDetails" destination="sxB-Qq-0TR" id="AyQ-CY-YaG"/>
                         <segue destination="drs-uX-qyB" kind="showDetail" identifier="legislator_list" id="ypI-Mu-4VF"/>
                     </connections>
                 </viewController>

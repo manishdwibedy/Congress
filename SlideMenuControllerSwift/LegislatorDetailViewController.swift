@@ -9,10 +9,11 @@
 import UIKit
 import SwiftSpinner
 
-class LegislatorDetailViewController: UIViewController {
+class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var legislatorDetail = [String:String]()
-    
+    let titleValue = ["first_name"]
+    @IBOutlet weak var legislatorDetails: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,5 +31,19 @@ class LegislatorDetailViewController: UIViewController {
             
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.titleValue.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.legislatorDetails.dequeueReusableCell(withIdentifier: "cell")! as! LegislatorDetailViewCell
+        cell.title.text = self.titleValue[indexPath.row]
+        cell.value.text = self.legislatorDetail[self.titleValue[indexPath.row]]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }

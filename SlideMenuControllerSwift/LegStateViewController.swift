@@ -151,17 +151,26 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
         self.selectedIndex = indexPath.row
+//        self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
         self.performSegue(withIdentifier: "show_legislator", sender: nil)
-//        self.prepareForSegue(segue: "show_legislator", sender: nil)
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        if segue!.identifier == "show_legislator" {
-            let viewController:LegislatorDetailViewController = segue!.destination as! LegislatorDetailViewController
+//    func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+//        if segue!.identifier == "show_legislator" {
+//            let viewController:LegislatorDetailViewController = segue!.destination as! LegislatorDetailViewController
+//            
+//            viewController.legislatorDetail = self.filtered_list[self.selectedIndex]
+//        }
+//        
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "show_legislator" {
+            let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
             
             viewController.legislatorDetail = self.filtered_list[self.selectedIndex]
         }
-        
     }
     
     
@@ -190,6 +199,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         self.stateFilter.isHidden = true
         self.legislators.isHidden = false
     }
+    
     @IBAction func filterLegislators(_ sender: UIBarButtonItem) {
         self.stateFilter.isHidden = false
         self.legislators.isHidden = true
