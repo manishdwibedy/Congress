@@ -82,15 +82,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gHR-Tb-q2n">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="tgw-yP-mcy"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cBp-PH-4ut">
-                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="1OT-GG-aIc" detailTextLabel="hpa-WH-WgM" style="IBUITableViewCellStyleSubtitle" id="f4O-Pe-i03">
@@ -126,13 +119,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gHR-Tb-q2n" firstAttribute="leading" secondItem="AQf-YQ-HIq" secondAttribute="leading" id="7cw-XQ-WHx"/>
                             <constraint firstAttribute="trailing" secondItem="3U2-mZ-CeS" secondAttribute="trailing" id="Eab-VD-v14"/>
                             <constraint firstAttribute="trailing" secondItem="cBp-PH-4ut" secondAttribute="trailing" id="Kbv-vo-4pj"/>
                             <constraint firstItem="3U2-mZ-CeS" firstAttribute="leading" secondItem="AQf-YQ-HIq" secondAttribute="leading" id="MIn-1W-P66"/>
-                            <constraint firstItem="gHR-Tb-q2n" firstAttribute="top" secondItem="3U2-mZ-CeS" secondAttribute="bottom" id="McE-s8-DvQ"/>
-                            <constraint firstItem="cBp-PH-4ut" firstAttribute="top" secondItem="3U2-mZ-CeS" secondAttribute="bottom" constant="44" id="dd8-bV-1sh"/>
-                            <constraint firstAttribute="trailing" secondItem="gHR-Tb-q2n" secondAttribute="trailing" id="j2U-p2-xkp"/>
+                            <constraint firstItem="cBp-PH-4ut" firstAttribute="top" secondItem="3U2-mZ-CeS" secondAttribute="bottom" id="dd8-bV-1sh"/>
                             <constraint firstItem="2l2-29-ts7" firstAttribute="top" secondItem="cBp-PH-4ut" secondAttribute="bottom" id="sGx-MH-1ro"/>
                             <constraint firstItem="3U2-mZ-CeS" firstAttribute="top" secondItem="hff-iO-Hda" secondAttribute="bottom" constant="8" id="t1V-t1-iU0"/>
                             <constraint firstItem="cBp-PH-4ut" firstAttribute="leading" secondItem="AQf-YQ-HIq" secondAttribute="leading" id="wVU-Ke-xfq"/>
@@ -141,7 +131,8 @@
                     <tabBarItem key="tabBarItem" title="Senate" id="M3Z-Fj-qSK"/>
                     <connections>
                         <outlet property="legislatorTable" destination="cBp-PH-4ut" id="cMD-zf-P0U"/>
-                        <outlet property="search" destination="gHR-Tb-q2n" id="KZe-KK-1Aj"/>
+                        <outlet property="navigationBar" destination="3U2-mZ-CeS" id="jQ1-DY-xOq"/>
+                        <outlet property="searchButton" destination="P1H-qo-gsa" id="ZTp-jy-SLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORb-Ln-QLT" userLabel="First Responder" sceneMemberID="firstResponder"/>

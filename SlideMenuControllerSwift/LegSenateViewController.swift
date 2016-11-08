@@ -15,13 +15,18 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var legislator_list = [[String:String]]()
     var filtered_list = [[String:String]]()
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
-    @IBOutlet weak var search: UISearchBar!
+    @IBOutlet weak var searchButton: UIBarButtonItem!
+    var search: UISearchBar!
     @IBOutlet weak var legislatorTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.search = UISearchBar()
         search.delegate = self
+        search.showsCancelButton = true
+        search.sizeToFit()
     }
     
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
@@ -134,11 +139,8 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func search(_ sender: UIBarButtonItem) {
-        let search = UISearchBar()
-        search.showsCancelButton = true
-        search.placeholder = "Search..."
-        search.delegate = self
-        self.navigationItem.titleView = search
+        navigationBar.topItem?.titleView = self.search
+        self.searchButton.isEnabled = false
     }
     
     // This method updates filteredData based on the text in the Search Box
@@ -152,7 +154,14 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
             // If dataItem matches the searchText, return true to include it
             return dataString["first_name"]?.range(of: searchText, options: .caseInsensitive) != nil
         })
-        
+        self.legislatorTable.reloadData()
+    }
+    
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
+        self.search.text = ""
+        navigationBar.topItem?.titleView = nil
+        self.searchButton.isEnabled = true
+        self.filtered_list = self.legislator_list
         self.legislatorTable.reloadData()
     }
 }
