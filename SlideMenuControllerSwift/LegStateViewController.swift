@@ -151,18 +151,8 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
         self.selectedIndex = indexPath.row
-//        self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
         self.performSegue(withIdentifier: "show_legislator", sender: nil)
     }
-    
-//    func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-//        if segue!.identifier == "show_legislator" {
-//            let viewController:LegislatorDetailViewController = segue!.destination as! LegislatorDetailViewController
-//            
-//            viewController.legislatorDetail = self.filtered_list[self.selectedIndex]
-//        }
-//        
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
