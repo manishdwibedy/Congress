@@ -84,4 +84,19 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
+    
+    @IBAction func favorite(_ sender: UIBarButtonItem) {
+        var favorite = UserDefaults.standard.stringArray(forKey: "favorite_legislator")
+        
+        let id = self.legislatorDetail["bioguide_id"]!
+        if favorite == nil{
+            favorite = [id]
+        }
+        else if !(favorite?.contains(id))!{
+            favorite?.append(id)
+        }
+        
+        
+        UserDefaults.standard.set(favorite, forKey: "favorite_legislator")
+    }
 }
