@@ -109,6 +109,8 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                         self.legislator_list.append(legislator)
                     }
                     SwiftSpinner.hide()
+                    
+                    self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) == ComparisonResult.orderedAscending })
                     self.filtered_list = self.legislator_list
                     self.legislators.reloadData()
                     self.stateFilter.reloadAllComponents()
