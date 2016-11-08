@@ -12,7 +12,9 @@ import SwiftSpinner
 class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var legislatorDetail = [String:String]()
-    let titleValue = ["first_name"]
+    let titleValue = ["first_name", "last_name", "state_name", "birthday", "gender", "chamber", "fax", "twitter_id", "website", "office", "term_end"]
+    
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var legislatorDetails: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,12 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let url = URL(string: "https://theunitedstates.io/images/congress/225x275/" + legislatorDetail["bioguide_id"]! + ".jpg")
+        let data = try? Data(contentsOf: url!)
+        
+        image.image = UIImage(data: data!)
+
     }
     
     func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
