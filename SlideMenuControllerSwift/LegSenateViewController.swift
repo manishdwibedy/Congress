@@ -15,6 +15,7 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var legislator_list = [[String:String]]()
     var filtered_list = [[String:String]]()
+    
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     @IBOutlet weak var searchButton: UIBarButtonItem!
@@ -109,10 +110,10 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
                         if subJson["chamber"] == "senate"{
                             self.legislator_list.append(legislator)
                         }
-                        
                     }
                     SwiftSpinner.hide()
                     self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) == ComparisonResult.orderedAscending })
+                    
                     self.filtered_list = self.legislator_list
                     self.legislatorTable.reloadData()
                 }
