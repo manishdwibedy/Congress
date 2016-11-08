@@ -314,18 +314,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G4E-T4-IQL" id="fWj-ak-uMe">
-                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v0k-eY-8Y0">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i3N-ks-RWK">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -371,10 +371,10 @@
             </objects>
             <point key="canvasLocation" x="348" y="-864.01799100449784"/>
         </scene>
-        <!--View Controller-->
+        <!--Legislator Detail View Controller-->
         <scene sceneID="bKW-kH-gaB">
             <objects>
-                <viewController id="Pgf-0M-WFC" sceneMemberID="viewController">
+                <viewController id="Pgf-0M-WFC" customClass="LegislatorDetailViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wPE-NF-TNP"/>
                         <viewControllerLayoutGuide type="bottom" id="5Ea-gF-xVk"/>
@@ -392,7 +392,7 @@
                                     <navigationItem title="Title" id="uUS-iY-Lei">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="u1y-sM-eJz">
                                             <connections>
-                                                <segue destination="5zM-8d-icE" kind="showDetail" id="Fb7-GG-RG3"/>
+                                                <action selector="back:" destination="Pgf-0M-WFC" id="1SP-Y9-Qvx"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -415,6 +415,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="2mV-nN-TCJ" secondAttribute="trailing" constant="50" id="gPO-ED-dqR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="5zM-8d-icE" kind="showDetail" identifier="legislator_list" id="EmC-cM-8QB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TB-jv-nkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -686,6 +689,6 @@
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fb7-GG-RG3"/>
+        <segue reference="EmC-cM-8QB"/>
     </inferredMetricsTieBreakers>
 </document>

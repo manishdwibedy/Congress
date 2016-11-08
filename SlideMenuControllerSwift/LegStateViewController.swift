@@ -35,7 +35,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         self.stateFilter.dataSource = self
         
         if legislator_list.count == 0 {
-            SwiftSpinner.show("Connecting to satellite...")
+            
 
             Alamofire.request("http://localhost/congress.php?operation=legislators").responseJSON { response in
                 
@@ -123,6 +123,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SwiftSpinner.show("Connecting to satellite...")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
