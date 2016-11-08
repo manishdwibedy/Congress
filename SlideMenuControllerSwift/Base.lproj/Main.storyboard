@@ -416,7 +416,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="5zM-8d-icE" kind="showDetail" identifier="legislator_list" id="EmC-cM-8QB"/>
+                        <segue destination="drs-uX-qyB" kind="showDetail" identifier="legislator_list" id="ypI-Mu-4VF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TB-jv-nkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -688,7 +688,4 @@
     <resources>
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="EmC-cM-8QB"/>
-    </inferredMetricsTieBreakers>
 </document>

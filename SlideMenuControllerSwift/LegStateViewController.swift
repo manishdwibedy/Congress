@@ -123,7 +123,10 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        SwiftSpinner.show("Connecting to satellite...")
+        if self.legislator_list.count == 0{
+            SwiftSpinner.show("Connecting to satellite...")
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
