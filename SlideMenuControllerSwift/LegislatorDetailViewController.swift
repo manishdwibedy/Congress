@@ -14,6 +14,8 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     var legislatorDetail = [String:String]()
     let titleValue = ["first_name", "last_name", "state_name", "birthday", "gender", "chamber", "fax", "twitter_id", "website", "office", "term_end"]
     
+    let titleValues = ["first_name": "First Name", "last_name": "Last Name", "state_name": "State", "birthday": "Birth date", "gender": "Gender", "chamber": "Chamber", "fax" : "Fax No.", "twitter_id": "Twitter", "website": "Website", "office": "Office No.", "term_end": "Term ends on"]
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var legislatorDetails: UITableView!
     override func viewDidLoad() {
@@ -47,7 +49,8 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.legislatorDetails.dequeueReusableCell(withIdentifier: "cell")! as! LegislatorDetailViewCell
-        cell.title.text = self.titleValue[indexPath.row]
+        
+        cell.title.text = self.titleValues[self.titleValue[indexPath.row]]
         cell.value.text = self.legislatorDetail[self.titleValue[indexPath.row]]
         return cell
     }
