@@ -74,7 +74,7 @@
                                                 <action selector="openMenu:" destination="HAN-Xl-0bt" id="3VL-F8-dp9"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="P1H-qo-gsa">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="P1H-qo-gsa">
                                             <connections>
                                                 <action selector="search:" destination="HAN-Xl-0bt" id="RTr-tg-6wt"/>
                                             </connections>
