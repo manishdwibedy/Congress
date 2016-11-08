@@ -19,6 +19,9 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
 
     
     var legislator_list = [[String:String]]()
+    
+    var filtered_list = [[String:String]]()
+    
     var selectedIndex = 0
     
     @IBOutlet weak var stateFilter: UIPickerView!
@@ -105,6 +108,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                         self.legislator_list.append(legislator)
                     }
                     SwiftSpinner.hide()
+                    self.filtered_list = self.legislator_list
                     self.legislators.reloadData()
                     self.stateFilter.reloadAllComponents()
                 }
@@ -121,13 +125,13 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.legislator_list.count
+        return self.filtered_list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.legislators.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
-        let legislator = self.legislator_list[indexPath.row]
+        let legislator = self.filtered_list[indexPath.row]
         cell.textLabel?.text = legislator["first_name"]! + " " + legislator["last_name"]!
         cell.detailTextLabel?.text = legislator["state_name"]
         
@@ -150,7 +154,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         if segue!.identifier == "show_legislator" {
             let viewController:LegislatorDetailViewController = segue!.destination as! LegislatorDetailViewController
             
-            viewController.legislatorDetail = self.legislator_list[self.selectedIndex]
+            viewController.legislatorDetail = self.filtered_list[self.selectedIndex]
         }
         
     }
@@ -168,6 +172,8 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let state = self.stateList[row]
+        self.filterLegislatorsByState(state: state)
         return self.stateList[row]
     }
     
@@ -182,5 +188,16 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func filterLegislators(_ sender: UIBarButtonItem) {
         self.stateFilter.isHidden = false
         self.legislators.isHidden = true
+    }
+    
+    func filterLegislatorsByState(state: String){
+        self.filtered_list = []
+        for legislator in self.legislator_list{
+            if legislator["state_name"] == state{
+                self.filtered_list.append(legislator)
+            }
+        }
+        self.legislators.reloadData()
+        
     }
 }
