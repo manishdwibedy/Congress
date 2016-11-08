@@ -43,6 +43,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                     let swiftyJsonVar = JSON(response.result.value!)
                     
                     let results = swiftyJsonVar["results"]
+                    self.stateList.append("All States")
                     
                     for (_, subJson) in results {
                         var legislator = [String:String]()
@@ -193,7 +194,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     func filterLegislatorsByState(state: String){
         self.filtered_list = []
         for legislator in self.legislator_list{
-            if legislator["state_name"] == state{
+            if legislator["state_name"] == state || state == "All States"{
                 self.filtered_list.append(legislator)
             }
         }
