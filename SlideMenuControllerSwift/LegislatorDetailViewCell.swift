@@ -11,7 +11,8 @@ import UIKit
 class LegislatorDetailViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var value: UILabel!
+    
+    @IBOutlet weak var value: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
