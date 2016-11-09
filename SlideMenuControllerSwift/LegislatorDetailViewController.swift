@@ -21,7 +21,7 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var legislatorDetails: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.legislatorDetail.tableFooterView = UIView()
+        self.legislatorDetails.tableFooterView = UIView()
     }
     @IBAction func back(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "legislator_list", sender: nil)
