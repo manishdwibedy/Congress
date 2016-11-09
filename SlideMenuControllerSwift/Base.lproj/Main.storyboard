@@ -164,7 +164,11 @@
                                                 <action selector="openMenu:" destination="pQb-ej-SCu" id="LHs-ab-65Y"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" id="asq-Mj-ola"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="asq-Mj-ola">
+                                            <connections>
+                                                <action selector="search:" destination="pQb-ej-SCu" id="6RT-oI-IJ9"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

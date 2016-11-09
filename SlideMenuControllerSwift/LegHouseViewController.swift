@@ -148,21 +148,22 @@ class LegHouseViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func search(_ sender: UIBarButtonItem) {
         navigationBar.topItem?.titleView = self.search
-        if self.searching{
-            self.searchButton.image = UIImage(named: "cancel")!
-            self.searchButton.title = ""
-            self.searching = false
-        }
-        else{
-            self.search.text = ""
-            navigationBar.topItem?.titleView = nil
-            self.filtered_list = self.legislator_list
-            self.legislatorTable.reloadData()
-            self.searchButton.image = UIImage(named: "search")!
-            self.searchButton.title = ""
-            self.searching = true
-            
-        }
+                if self.searching{
+                    self.searchButton.image = UIImage(named: "cancel")!
+                    self.searchButton.title = ""
+                    self.searching = false
+                }
+                else{
+                    self.search.text = ""
+                    navigationBar.topItem?.titleView = nil
+                    self.filtered_list = self.legislator_list
+                    self.legislatorTable.reloadData()
+                    self.searchButton.image = UIImage(named: "search")!
+                    self.searchButton.title = ""
+                    self.searching = true
+                    
+                }
+
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
