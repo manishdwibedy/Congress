@@ -145,7 +145,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.legislator_list.count == 0{
-            SwiftSpinner.show("Connecting to satellite...")
+            SwiftSpinner.show("Fetching data...")
         }
         
     }
