@@ -183,6 +183,7 @@ class LegHouseViewController: UIViewController, UITableViewDelegate, UITableView
             let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
             
             viewController.legislatorDetail = (self.legislator_list[self.selectedIndex])
+            viewController.tab = 1
         }
     }
 }

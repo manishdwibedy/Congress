@@ -182,6 +182,7 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
             let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
             
             viewController.legislatorDetail = (self.legislator_list[self.selectedIndex])
+            viewController.tab = 2
         }
     }
 }

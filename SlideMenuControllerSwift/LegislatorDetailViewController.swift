@@ -16,6 +16,7 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     
     let titleValues = ["first_name": "First Name", "last_name": "Last Name", "state_name": "State", "birthday": "Birth date", "gender": "Gender", "chamber": "Chamber", "fax" : "Fax No.", "twitter_id": "Twitter", "website": "Website", "office": "Office No.", "term_end": "Term ends on"]
     
+    var tab = 0
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var legislatorDetails: UITableView!
     override func viewDidLoad() {
@@ -113,5 +114,14 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
         
         
         UserDefaults.standard.set(favorite, forKey: "favorite_legislator")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "legislator_list" {
+            let viewController:LegislatorViewController = segue.destination as! LegislatorViewController
+            
+            viewController.tab = self.tab
+        }
     }
 }

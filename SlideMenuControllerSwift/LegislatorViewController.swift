@@ -9,8 +9,14 @@ import UIKit
 
 class LegislatorViewController: UITabBarController, SlideMenuControllerDelegate {
 
+    var tab = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedViewController = self.viewControllers?[self.tab]
+        
+//        self.tabBarController?.selectedIndex = self.tab;
+
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
