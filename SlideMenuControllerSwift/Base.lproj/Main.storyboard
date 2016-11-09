@@ -164,22 +164,51 @@
                                                 <action selector="openMenu:" destination="pQb-ej-SCu" id="LHs-ab-65Y"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="asq-Mj-ola"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Hi-Mc-xlh">
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="WwK-2V-fAQ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WwK-2V-fAQ" id="1up-Bt-9v9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pQb-ej-SCu" id="ms2-fu-soT"/>
+                                    <outlet property="delegate" destination="pQb-ej-SCu" id="F5I-Sc-36Y"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1Hi-Mc-xlh" secondAttribute="trailing" id="DYV-r1-m5F"/>
+                            <constraint firstItem="1Hi-Mc-xlh" firstAttribute="leading" secondItem="ztN-CQ-ije" secondAttribute="leading" id="JF1-h3-Aev"/>
+                            <constraint firstItem="1Hi-Mc-xlh" firstAttribute="top" secondItem="MVZ-TJ-l97" secondAttribute="bottom" id="OGI-X1-Pyo"/>
+                            <constraint firstItem="sik-K8-K9D" firstAttribute="top" secondItem="1Hi-Mc-xlh" secondAttribute="bottom" id="Uwm-YE-XGo"/>
                             <constraint firstAttribute="trailing" secondItem="MVZ-TJ-l97" secondAttribute="trailing" id="W8P-5e-Z83"/>
                             <constraint firstItem="MVZ-TJ-l97" firstAttribute="leading" secondItem="ztN-CQ-ije" secondAttribute="leading" id="i6C-2l-jjr"/>
                             <constraint firstItem="MVZ-TJ-l97" firstAttribute="top" secondItem="Ita-6k-Zqu" secondAttribute="bottom" constant="8" id="w8E-Te-v5P"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="House" id="XaI-H7-Z02"/>
+                    <connections>
+                        <outlet property="legislatorTable" destination="1Hi-Mc-xlh" id="g6V-zq-JCR"/>
+                        <outlet property="navigationBar" destination="MVZ-TJ-l97" id="2nx-LK-lns"/>
+                        <outlet property="searchButton" destination="asq-Mj-ola" id="m8M-X1-Utt"/>
+                        <segue destination="Pgf-0M-WFC" kind="showDetail" identifier="show_legislator_house" id="16F-0f-UA7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr6-xq-CFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="-209"/>
+            <point key="canvasLocation" x="348" y="-209.14542728635683"/>
         </scene>
         <!--Committee-->
         <scene sceneID="FhI-JW-VBO">
@@ -788,6 +817,6 @@
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lrf-hq-lcG"/>
+        <segue reference="16F-0f-UA7"/>
     </inferredMetricsTieBreakers>
 </document>
