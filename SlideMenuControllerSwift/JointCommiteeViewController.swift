@@ -38,6 +38,7 @@ class JointCommitteeViewController: UIViewController, UITableViewDelegate, UITab
         let attributes: [String: AnyObject] = [NSFontAttributeName : UIFont.systemFont(ofSize: 20.0)]
         appearance.setTitleTextAttributes(attributes, for: .normal)
         appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -12)
+        self.committeeTable.tableFooterView = UIView()
     }
     
     @IBAction func openMenu(_ sender: UIBarButtonItem) {

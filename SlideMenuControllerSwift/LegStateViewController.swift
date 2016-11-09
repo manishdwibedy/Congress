@@ -141,7 +141,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }
-        
+        self.legislators.tableFooterView = UIView()
     }
     
     @IBAction func openMenu(_ sender: UIBarButtonItem) {

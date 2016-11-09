@@ -21,6 +21,8 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = committeeDetail["name"]
+        self.committeeDetailTable.tableFooterView = UIView()
+
         // Do any additional setup after loading the view.
     }
 
