@@ -75,7 +75,13 @@ class HouseCommitteeViewController: UIViewController, UITableViewDelegate, UITab
                             committee["parent_committee_id"] = parent_committee_id
                         }
                         
+                        if let office = subJson["office"].string {
+                            committee["office"] = office
+                        }
                         
+                        if let phone = subJson["phone"].string {
+                            committee["phone"] = phone
+                        }
                         
                         if subJson["chamber"] == "house"{
                             self.committee_list.append(committee)
@@ -106,6 +112,8 @@ class HouseCommitteeViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "house_committee_detail", sender: nil)
     }
     
     @IBAction func search(_ sender: UIBarButtonItem) {
@@ -135,6 +143,15 @@ class HouseCommitteeViewController: UIViewController, UITableViewDelegate, UITab
     
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "house_committee_detail" {
+            let viewController:CommitteeDetailViewController = segue.destination as! CommitteeDetailViewController
+            
+            viewController.committeeDetail = (self.committee_list[self.selectedIndex])
+        }
     }
 }
 
