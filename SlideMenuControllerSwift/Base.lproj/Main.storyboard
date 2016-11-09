@@ -133,6 +133,7 @@
                         <outlet property="legislatorTable" destination="cBp-PH-4ut" id="cMD-zf-P0U"/>
                         <outlet property="navigationBar" destination="3U2-mZ-CeS" id="jQ1-DY-xOq"/>
                         <outlet property="searchButton" destination="P1H-qo-gsa" id="ZTp-jy-SLh"/>
+                        <segue destination="Pgf-0M-WFC" kind="showDetail" identifier="show_legislator_senate" id="lrf-hq-lcG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORb-Ln-QLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -786,4 +787,7 @@
     <resources>
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lrf-hq-lcG"/>
+    </inferredMetricsTieBreakers>
 </document>

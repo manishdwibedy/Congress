@@ -17,6 +17,7 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
     var filtered_list = [[String:String]]()
     
     @IBOutlet weak var navigationBar: UINavigationBar!
+    var selectedIndex = 0
     
     @IBOutlet weak var searchButton: UIBarButtonItem!
     var search: UISearchBar!
@@ -141,6 +142,8 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "show_legislator_senate", sender: nil)
     }
     
     @IBAction func search(_ sender: UIBarButtonItem) {
@@ -162,15 +165,8 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    // This method updates filteredData based on the text in the Search Box
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // When there is no text, filteredData is the same as the original data
-        // When user has entered text into the search box
-        // Use the filter method to iterate over all items in the data array
-        // For each item, return true if the item should be included and false if the
-        // item should NOT be included
         self.filtered_list = searchText.isEmpty ? self.legislator_list : self.legislator_list.filter({(dataString: [String:String]) -> Bool in
-            // If dataItem matches the searchText, return true to include it
             return dataString["first_name"]?.range(of: searchText, options: .caseInsensitive) != nil
         })
         self.legislatorTable.reloadData()
@@ -178,5 +174,14 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
     
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "show_legislator_senate" {
+            let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
+            
+            viewController.legislatorDetail = (self.legislator_list[self.selectedIndex])
+        }
     }
 }
