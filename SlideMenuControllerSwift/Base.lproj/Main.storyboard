@@ -477,7 +477,7 @@
                                                 <action selector="back:" destination="Pgf-0M-WFC" id="1SP-Y9-Qvx"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="6gP-g6-ZLF">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="6gP-g6-ZLF">
                                             <connections>
                                                 <action selector="favorite:" destination="Pgf-0M-WFC" id="tt7-d1-ZRK"/>
                                             </connections>
@@ -546,6 +546,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favoriteButton" destination="6gP-g6-ZLF" id="w7o-5j-iS6"/>
                         <outlet property="image" destination="2mV-nN-TCJ" id="jQR-fJ-Q15"/>
                         <outlet property="legislatorDetails" destination="sxB-Qq-0TR" id="AyQ-CY-YaG"/>
                         <segue destination="drs-uX-qyB" kind="showDetail" identifier="legislator_list" id="ypI-Mu-4VF"/>

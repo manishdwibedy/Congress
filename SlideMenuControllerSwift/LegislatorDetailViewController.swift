@@ -18,11 +18,23 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     
     var tab = 0
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var legislatorDetails: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.legislatorDetails.tableFooterView = UIView()
+        
+        let favorites = UserDefaults.standard.stringArray(forKey: "favorite_legislator")
+        if (favorites?.contains(legislatorDetail["bioguide_id"]!))!{
+            self.favoriteButton.image = UIImage(named: "star-filled")!
+            self.favoriteButton.title = ""
+        }
+        else{
+            self.favoriteButton.image = UIImage(named: "star")!
+            self.favoriteButton.title = ""
+        }
     }
+    
     @IBAction func back(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "legislator_list", sender: nil)
     }
@@ -108,9 +120,21 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
         let id = self.legislatorDetail["bioguide_id"]!
         if favorite == nil{
             favorite = [id]
+            self.favoriteButton.image = UIImage(named: "star-filled")!
+            self.favoriteButton.title = ""
         }
         else if !(favorite?.contains(id))!{
             favorite?.append(id)
+            self.favoriteButton.image = UIImage(named: "star-filled")!
+            self.favoriteButton.title = ""
+            
+        }
+        else{
+            self.favoriteButton.image = UIImage(named: "star")!
+            self.favoriteButton.title = ""
+            if let index = favorite?.index(of: legislatorDetail["bioguide_id"]!) {
+                favorite?.remove(at: index)
+            }
         }
         
         
