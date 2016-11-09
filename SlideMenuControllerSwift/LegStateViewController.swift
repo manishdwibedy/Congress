@@ -37,6 +37,11 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         self.stateFilter.delegate = self
         self.stateFilter.dataSource = self
         
+        let appearance = UITabBarItem.appearance()
+        let attributes: [String: AnyObject] = [NSFontAttributeName : UIFont.systemFont(ofSize: 20.0)]
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+        appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -12)
+        
         if legislator_list.count == 0 {
             
 

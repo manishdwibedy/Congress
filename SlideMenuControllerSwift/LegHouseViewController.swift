@@ -33,6 +33,12 @@ class LegHouseViewController: UIViewController, UITableViewDelegate, UITableView
         search.sizeToFit()
         self.searchButton.image = UIImage(named: "search")!
         self.searchButton.title = ""
+        
+        let appearance = UITabBarItem.appearance()
+        let attributes: [String: AnyObject] = [NSFontAttributeName : UIFont.systemFont(ofSize: 20.0)]
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+        appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -12)
+
     }
     
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
