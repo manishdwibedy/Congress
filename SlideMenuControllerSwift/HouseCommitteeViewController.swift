@@ -136,15 +136,5 @@ class HouseCommitteeViewController: UIViewController, UITableViewDelegate, UITab
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "show_legislator_house" {
-            let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
-            
-            viewController.legislatorDetail = (self.committee_list[self.selectedIndex])
-            viewController.tab = 1
-        }
-    }
 }
 
