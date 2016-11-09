@@ -128,7 +128,7 @@ class HouseCommitteeViewController: UIViewController, UITableViewDelegate, UITab
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.filtered_list = searchText.isEmpty ? self.committee_list : self.committee_list.filter({(dataString: [String:String]) -> Bool in
-            return dataString["first_name"]?.range(of: searchText, options: .caseInsensitive) != nil
+            return dataString["name"]?.range(of: searchText, options: .caseInsensitive) != nil
         })
         self.committeeTable.reloadData()
     }
