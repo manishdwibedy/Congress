@@ -69,6 +69,15 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
             }
             
         }
+        else if self.titleValue[indexPath.row] == "birthday" || self.titleValue[indexPath.row] == "term_end"{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            let date = dateFormatter.date(from: self.legislatorDetail[self.titleValue[indexPath.row]]!)
+            dateFormatter.dateFormat = "dd MMM yyyy"
+
+            cell.value.text = dateFormatter.string(from: date!)
+        }
         else if self.titleValue[indexPath.row] == "website"{
             let linkAttributes = [
                 NSLinkAttributeName: NSURL(string: self.legislatorDetail[self.titleValue[indexPath.row]]!)!,
