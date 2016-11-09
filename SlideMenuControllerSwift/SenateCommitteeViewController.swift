@@ -124,6 +124,8 @@ class SenateCommitteeViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "senate_committee_detail", sender: nil)
     }
     
     
@@ -136,6 +138,16 @@ class SenateCommitteeViewController: UIViewController, UITableViewDelegate, UITa
     
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "senate_committee_detail" {
+            let viewController:CommitteeDetailViewController = segue.destination as! CommitteeDetailViewController
+            
+            viewController.committeeDetail = (self.committee_list[self.selectedIndex])
+            viewController.tab = 1
+        }
     }
 }
 

@@ -736,6 +736,7 @@
                         <outlet property="committeeTable" destination="asZ-wy-qzf" id="KaJ-pa-uKR"/>
                         <outlet property="navigationBar" destination="hQZ-qs-bbC" id="lcX-HE-LKg"/>
                         <outlet property="searchButton" destination="I5D-Zp-iNr" id="m4z-c5-0oD"/>
+                        <segue destination="dWg-3L-KY6" kind="showDetail" identifier="joint_committee_detail" id="shI-uS-OYV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxB-Lx-iYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -822,6 +823,7 @@
                         <outlet property="committeeTable" destination="GeR-Pj-cgT" id="znT-tj-rXm"/>
                         <outlet property="navigationBar" destination="7o7-ku-jiI" id="qeV-P4-XWl"/>
                         <outlet property="searchButton" destination="O7E-Fl-gF3" id="IGB-NR-2MS"/>
+                        <segue destination="dWg-3L-KY6" kind="showDetail" identifier="senate_committee_detail" id="JA0-PB-2Ku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPl-19-Fa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -849,7 +851,7 @@
                                     <navigationItem title="Committee Detail" id="dYU-Zv-6pM">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="8f7-TS-iwU">
                                             <connections>
-                                                <segue destination="C3B-Qt-9bb" kind="showDetail" id="f8p-Yo-JSY"/>
+                                                <segue destination="C3B-Qt-9bb" kind="showDetail" identifier="committee_list" id="f8p-Yo-JSY"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1048,6 +1050,7 @@
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="shI-uS-OYV"/>
         <segue reference="xNb-Ug-sbn"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,8 +10,11 @@ import UIKit
 
 class CommitteeViewController: UITabBarController, SlideMenuControllerDelegate {
     
+    var tab = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedViewController = self.viewControllers?[self.tab]
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -27,5 +30,6 @@ class CommitteeViewController: UITabBarController, SlideMenuControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
 }

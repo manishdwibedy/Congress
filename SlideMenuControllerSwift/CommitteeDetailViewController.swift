@@ -18,6 +18,7 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
     let titleValues = ["committee_id": "ID", "parent_committee_id": "Parent ID", "chamber": "Chamber", "office": "Office", "phone": "Contact"]
     
     var committeeDetail = [String:String]()
+    var tab = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = committeeDetail["name"]
@@ -73,6 +74,16 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "committee_list" {
+            let viewController:CommitteeViewController = segue.destination as! CommitteeViewController
+            
+            viewController.tab = self.tab
+        }
     }
 
 }

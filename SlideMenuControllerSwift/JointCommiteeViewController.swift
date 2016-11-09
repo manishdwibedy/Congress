@@ -123,6 +123,8 @@ class JointCommitteeViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "joint_committee_detail", sender: nil)
     }
     
     
@@ -135,6 +137,16 @@ class JointCommitteeViewController: UIViewController, UITableViewDelegate, UITab
     
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "joint_committee_detail" {
+            let viewController:CommitteeDetailViewController = segue.destination as! CommitteeDetailViewController
+            
+            viewController.committeeDetail = (self.committee_list[self.selectedIndex])
+            viewController.tab = 2
+        }
     }
 
 }
