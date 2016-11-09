@@ -24,6 +24,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     var filteredAlphabets = [String]()
     var alphabetMapping = [String:[[String:String]]]()
     
+    var selectedAlpha = 0
     var selectedIndex = 0
     
     @IBOutlet weak var stateFilter: UIPickerView!
@@ -126,7 +127,9 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                     
                     self.alphabets.sort(by: { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending})
                         
-                    self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) == ComparisonResult.orderedAscending })
+                    self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) ==
+                        ComparisonResult.orderedAscending })
+                    self.filteredAlphabets = self.alphabets
                     self.filtered_list = self.alphabetMapping
                     self.legislators.reloadData()
                     self.stateFilter.reloadAllComponents()
@@ -165,6 +168,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
+        self.selectedAlpha = indexPath.section
         self.selectedIndex = indexPath.row
         self.performSegue(withIdentifier: "show_legislator", sender: nil)
     }
@@ -201,7 +205,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "show_legislator" {
             let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
             
-            //viewController.legislatorDetail = self.filtered_list[self.selectedIndex]
+            viewController.legislatorDetail = (self.filtered_list[self.filteredAlphabets[ self.selectedAlpha]]?[self.selectedIndex])!
         }
     }
     
@@ -218,8 +222,6 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let state = self.stateList[row]
-        self.filterLegislatorsByState(state: state)
         return self.stateList[row]
     }
     
@@ -227,7 +229,8 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
-        print(self.stateList[row])
+        
+        self.filterLegislatorsByState(state: self.stateList[row])
         self.stateFilter.isHidden = true
         self.legislators.isHidden = false
     }

@@ -52,16 +52,22 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
         
         cell.title.text = self.titleValues[self.titleValue[indexPath.row]]
         if self.titleValue[indexPath.row] == "twitter_id"{
-            let linkAttributes = [
-                NSLinkAttributeName: NSURL(string: "http://twitter.com/" + self.legislatorDetail[self.titleValue[indexPath.row]]!)!,
-                NSForegroundColorAttributeName: UIColor.blue,
-                NSFontAttributeName : UIFont.systemFont(ofSize: 15.0)
-                ] as [String : Any]
+            if let twitterID = legislatorDetail["twitter_id"]{
+                let linkAttributes = [
+                    NSLinkAttributeName: NSURL(string: "http://twitter.com/" + twitterID)!,
+                    NSForegroundColorAttributeName: UIColor.blue,
+                    NSFontAttributeName : UIFont.systemFont(ofSize: 15.0)
+                    ] as [String : Any]
+                
+                let attributedString = NSMutableAttributedString(string: "Twitter Link")
+                
+                attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 12))
+                cell.value.attributedText = attributedString
+            }
+            else{
+                cell.value.text = "N.A."
+            }
             
-            let attributedString = NSMutableAttributedString(string: "Twitter Link")
-            
-            attributedString.setAttributes(linkAttributes, range: NSMakeRange(0, 12))
-            cell.value.attributedText = attributedString
         }
         else if self.titleValue[indexPath.row] == "website"{
             let linkAttributes = [
