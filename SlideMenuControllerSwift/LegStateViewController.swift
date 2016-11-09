@@ -19,8 +19,9 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
 
     
     var legislator_list = [[String:String]]()
-    var filtered_list = [[String:String]]()
+    var filtered_list = [String:[[String:String]]]()
     var alphabets = [String]()
+    var filteredAlphabets = [String]()
     var alphabetMapping = [String:[[String:String]]]()
     
     var selectedIndex = 0
@@ -126,7 +127,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
                     self.alphabets.sort(by: { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending})
                         
                     self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) == ComparisonResult.orderedAscending })
-                    self.filtered_list = self.legislator_list
+                    self.filtered_list = self.alphabetMapping
                     self.legislators.reloadData()
                     self.stateFilter.reloadAllComponents()
                 }
@@ -150,8 +151,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         let cell:UITableViewCell = self.legislators.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
         let alphabet = indexPath.section
-        let legislator = self.alphabetMapping[self.alphabets[alphabet]]?[indexPath.row]
-//        let legislator = self.filtered_list[indexPath.row]
+        let legislator = self.filtered_list[self.filteredAlphabets[alphabet]]?[indexPath.row]
         cell.textLabel?.text = (legislator?["first_name"]!)! + " " + (legislator?["last_name"]!)!
         cell.detailTextLabel?.text = legislator?["state_name"]
         
@@ -171,29 +171,29 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
         
-        return self.alphabets[section]
+        return self.filteredAlphabets[section]
         
     }
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return self.alphabetMapping[self.alphabets[section]]!.count
+        return self.filtered_list[self.filteredAlphabets[section]]!.count
     }
     
     
     
     @available(iOS 2.0, *)
     public func numberOfSections(in tableView: UITableView) -> Int{
-        return self.alphabets.count
+        return self.filteredAlphabets.count
         
     }
     
     public func sectionIndexTitles(for tableView: UITableView) -> [String]?{
-        return self.alphabets
-    }// return list of section titles to display in section index view (e.g. "ABCD...Z#")
+        return self.filteredAlphabets
+    }
 
     public func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int{
-        return self.alphabets.index(of: title)!
+        return self.filteredAlphabets.index(of: title)!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -201,7 +201,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "show_legislator" {
             let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
             
-            viewController.legislatorDetail = self.filtered_list[self.selectedIndex]
+            //viewController.legislatorDetail = self.filtered_list[self.selectedIndex]
         }
     }
     
@@ -238,10 +238,22 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func filterLegislatorsByState(state: String){
-        self.filtered_list = []
-        for legislator in self.legislator_list{
-            if legislator["state_name"] == state || state == "All States"{
-                self.filtered_list.append(legislator)
+        self.filtered_list = [:]
+        self.filteredAlphabets = []
+        
+        for alphabet in self.alphabets{
+            for legislator in self.alphabetMapping[alphabet]!{
+                if legislator["state_name"] == state || state == "All States"{
+                    let name:String = legislator["first_name"]!
+                    let firstLetter: String = String(name.characters.first!)
+                    if !self.filteredAlphabets.contains(firstLetter){
+                        self.filteredAlphabets.append(firstLetter)
+                        self.filtered_list[alphabet] = [legislator]
+                    }
+                    else{
+                        self.filtered_list[alphabet]!.append(legislator)
+                    }
+                }
             }
         }
         self.legislators.reloadData()
