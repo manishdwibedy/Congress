@@ -11,12 +11,31 @@ import Alamofire
 import SwiftyJSON
 import SwiftSpinner
 
-class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    @IBOutlet weak var searchButton: UIBarButtonItem!
     var legislator_list = [[String:String]]()
+    var filtered_list = [[String:String]]()
     @IBOutlet weak var legislatorTable: UITableView!
+    var search = UISearchBar()
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    var searching = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.search = UISearchBar()
+        search.delegate = self
+        search.showsCancelButton = false
+        search.sizeToFit()
+        self.searchButton.image = UIImage(named: "search")!
+        self.searchButton.title = ""
+        
+        let appearance = UITabBarItem.appearance()
+        let attributes: [String: AnyObject] = [NSFontAttributeName : UIFont.systemFont(ofSize: 20.0)]
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+        appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -12)
+        self.legislatorTable.tableFooterView = UIView()
     }
     
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
@@ -25,11 +44,12 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        var favorite = UserDefaults.standard.stringArray(forKey: "favorite_legislator")
+        let favorite = UserDefaults.standard.stringArray(forKey: "favorite_legislator")
         
-        for id in favorite!{
+        if (favorite?.count)! > 0 {
+            SwiftSpinner.show("Fetching data...")
             
-            Alamofire.request("http://104.196.231.114:8080/legislators?bioguide_id="+id).responseJSON { response in
+            Alamofire.request("http://104.196.231.114:8080/legislators?per_page=all").responseJSON { response in
                 
                 if((response.result.value) != nil) {
                     let swiftyJsonVar = JSON(response.result.value!)
@@ -93,28 +113,28 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
                         if let party = subJson["party"].string {
                             legislator["party"] = party
                         }
-                        
-                        self.legislator_list.append(legislator)
+                        if subJson["chamber"] == "house"{
+                            self.legislator_list.append(legislator)
+                        }
                     }
+                    SwiftSpinner.hide()
+                    self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) == ComparisonResult.orderedAscending })
                     
-                    self.legislator_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) ==
-                        ComparisonResult.orderedAscending })
-                    
+                    self.filtered_list = self.legislator_list
+                    self.legislatorTable.reloadData()
                 }
             }
         }
-        self.legislatorTable.reloadData()
-        SwiftSpinner.hide()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.legislator_list.count
+        return self.filtered_list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.legislatorTable.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
-        let legislator = self.legislator_list[indexPath.row]
+        let legislator = self.filtered_list[indexPath.row]
         cell.textLabel?.text = legislator["first_name"]! + " " + legislator["last_name"]!
         cell.detailTextLabel?.text = legislator["state_name"]
         
@@ -129,6 +149,26 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.selectedIndex = indexPath.row
         //self.performSegue(withIdentifier: "show_legislator_house", sender: nil)
+    }
+    
+    @IBAction func search(_ sender: UIBarButtonItem) {
+        navigationBar.topItem?.titleView = self.search
+        if self.searching{
+            self.searchButton.image = UIImage(named: "cancel")!
+            self.searchButton.title = ""
+            self.searching = false
+        }
+        else{
+            self.search.text = ""
+            navigationBar.topItem?.titleView = nil
+            self.filtered_list = self.legislator_list
+            self.legislatorTable.reloadData()
+            self.searchButton.image = UIImage(named: "search")!
+            self.searchButton.title = ""
+            self.searching = true
+            
+        }
+
     }
     
 }

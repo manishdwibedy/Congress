@@ -90,7 +90,7 @@ class HouseCommitteeViewController: UIViewController, UITableViewDelegate, UITab
                         }
                     }
                     SwiftSpinner.hide()
-                    self.committee_list.sort(by: { $0["first_name"]?.localizedCaseInsensitiveCompare($1["first_name"]!) == ComparisonResult.orderedAscending })
+                    self.committee_list.sort(by: { $0["name"]?.localizedCaseInsensitiveCompare($1["name"]!) == ComparisonResult.orderedAscending })
                     
                     self.filtered_list = self.committee_list
                     self.committeeTable.reloadData()

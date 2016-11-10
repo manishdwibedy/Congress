@@ -238,22 +238,40 @@
                                                 <action selector="openMenu:" destination="OrV-e0-j2v" id="tOR-Z7-A5C"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="b76-SY-X8t">
+                                            <connections>
+                                                <action selector="search:" destination="OrV-e0-j2v" id="ISj-Gt-6RN"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4tk-uR-ZFz">
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bM4-mK-40O" firstAttribute="top" secondItem="4tk-uR-ZFz" secondAttribute="bottom" id="9mo-89-K1b"/>
                             <constraint firstItem="BYC-d7-SB1" firstAttribute="leading" secondItem="Wlj-sG-gD3" secondAttribute="leading" id="D4l-1h-PDq"/>
+                            <constraint firstItem="4tk-uR-ZFz" firstAttribute="leading" secondItem="Wlj-sG-gD3" secondAttribute="leading" id="MwG-rt-ygb"/>
+                            <constraint firstItem="4tk-uR-ZFz" firstAttribute="top" secondItem="BYC-d7-SB1" secondAttribute="bottom" id="aKk-fE-2QI"/>
+                            <constraint firstAttribute="trailing" secondItem="4tk-uR-ZFz" secondAttribute="trailing" id="mtE-mX-TLN"/>
                             <constraint firstAttribute="trailing" secondItem="BYC-d7-SB1" secondAttribute="trailing" id="rhg-Qu-QIj"/>
                             <constraint firstItem="BYC-d7-SB1" firstAttribute="top" secondItem="2QP-Wv-RlZ" secondAttribute="bottom" constant="8" id="wHE-FZ-Z8N"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Committee" id="0tC-kN-fOV"/>
+                    <connections>
+                        <outlet property="committeeTable" destination="4tk-uR-ZFz" id="3ly-tS-ztT"/>
+                        <outlet property="navigationBar" destination="BYC-d7-SB1" id="kzY-9N-0B5"/>
+                        <outlet property="searchButton" destination="b76-SY-X8t" id="M39-rE-MAH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36c-BA-QEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3769" y="843"/>
+            <point key="canvasLocation" x="3768.8000000000002" y="842.42878560719646"/>
         </scene>
         <!--Bills-->
         <scene sceneID="IwQ-sB-3fp">
@@ -279,22 +297,40 @@
                                                 <action selector="openMenu:" destination="Tma-0z-JKZ" id="kC8-2t-8hT"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="zVO-gr-IQW">
+                                            <connections>
+                                                <action selector="search:" destination="Tma-0z-JKZ" id="M3A-kW-Qu4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-6D-QVF">
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wYL-Q1-D6V" firstAttribute="top" secondItem="QOd-Pt-SDN" secondAttribute="bottom" constant="8" id="AHJ-bi-nq8"/>
                             <constraint firstItem="wYL-Q1-D6V" firstAttribute="leading" secondItem="gt9-Mg-V0M" secondAttribute="leading" id="B94-CK-aI4"/>
+                            <constraint firstItem="GVu-3P-rxf" firstAttribute="top" secondItem="eiM-6D-QVF" secondAttribute="bottom" id="Cgw-oR-9v0"/>
+                            <constraint firstItem="eiM-6D-QVF" firstAttribute="leading" secondItem="gt9-Mg-V0M" secondAttribute="leading" id="P3O-T2-Yak"/>
+                            <constraint firstItem="eiM-6D-QVF" firstAttribute="top" secondItem="wYL-Q1-D6V" secondAttribute="bottom" id="ebG-fb-0UY"/>
+                            <constraint firstAttribute="trailing" secondItem="eiM-6D-QVF" secondAttribute="trailing" id="ofj-07-ufl"/>
                             <constraint firstAttribute="trailing" secondItem="wYL-Q1-D6V" secondAttribute="trailing" id="pTT-Fy-FFT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bills" id="S81-Fp-ioB"/>
+                    <connections>
+                        <outlet property="billTable" destination="eiM-6D-QVF" id="Ht5-5x-0eD"/>
+                        <outlet property="navigationBar" destination="wYL-Q1-D6V" id="Wuu-yy-OMu"/>
+                        <outlet property="searchButton" destination="zVO-gr-IQW" id="Rhe-Sd-j1h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHa-Xw-INV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3769" y="121"/>
+            <point key="canvasLocation" x="3768.8000000000002" y="120.98950524737631"/>
         </scene>
         <!--Legislators-->
         <scene sceneID="2xa-Sp-TOf">
@@ -318,6 +354,11 @@
                                         <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="7Ce-9O-0Yg">
                                             <connections>
                                                 <action selector="openMenu:" destination="9zb-Nm-u3o" id="GDa-hC-MvU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="3G5-ob-EPP">
+                                            <connections>
+                                                <action selector="search:" destination="9zb-Nm-u3o" id="mo6-Yx-h0w"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -372,6 +413,8 @@
                     <tabBarItem key="tabBarItem" title="Legislators" id="4xa-vs-VSO"/>
                     <connections>
                         <outlet property="legislatorTable" destination="2bm-yD-BRU" id="5nX-i2-1Cm"/>
+                        <outlet property="navigationBar" destination="fA8-RK-g0n" id="Owd-Cf-RKg"/>
+                        <outlet property="searchButton" destination="3G5-ob-EPP" id="dOy-3d-2Yc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU0-AO-lRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
