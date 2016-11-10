@@ -17,6 +17,7 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
     
     let titleValues = ["committee_id": "ID", "parent_committee_id": "Parent ID", "chamber": "Chamber", "office": "Office", "phone": "Contact"]
     
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     var committeeDetail = [String:String]()
     var tab = 0
     override func viewDidLoad() {
@@ -25,6 +26,15 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
         self.committeeDetailTable.tableFooterView = UIView()
 
         // Do any additional setup after loading the view.
+        let favorites = UserDefaults.standard.stringArray(forKey: "favorite_committee")
+        if ((favorites != nil) && (favorites?.contains(committeeDetail["committee_id"]!))!){
+            self.favoriteButton.image = UIImage(named: "star-filled")!
+            self.favoriteButton.title = ""
+        }
+        else{
+            self.favoriteButton.image = UIImage(named: "star")!
+            self.favoriteButton.title = ""
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +87,33 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     
+    @IBAction func favorite(_ sender: UIBarButtonItem) {
+        var favorite = UserDefaults.standard.stringArray(forKey: "favorite_committee")
+        
+        let id = self.committeeDetail["committee_id"]!
+        if favorite == nil{
+            favorite = [id]
+            self.favoriteButton.image = UIImage(named: "star-filled")!
+            self.favoriteButton.title = ""
+        }
+        else if !(favorite?.contains(id))!{
+            favorite?.append(id)
+            self.favoriteButton.image = UIImage(named: "star-filled")!
+            self.favoriteButton.title = ""
+            
+        }
+        else{
+            self.favoriteButton.image = UIImage(named: "star")!
+            self.favoriteButton.title = ""
+            if let index = favorite?.index(of: committeeDetail["committee_id"]!) {
+                favorite?.remove(at: index)
+            }
+        }
+        
+        
+        UserDefaults.standard.set(favorite, forKey: "favorite_committee")
+
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "committee_list" {
