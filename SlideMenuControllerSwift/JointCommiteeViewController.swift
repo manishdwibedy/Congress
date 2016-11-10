@@ -50,7 +50,7 @@ class JointCommitteeViewController: UIViewController, UITableViewDelegate, UITab
         if self.committee_list.count == 0 {
             SwiftSpinner.show("Fetching data...")
             
-            Alamofire.request("http://localhost/congress.php?operation=committees").responseJSON { response in
+            Alamofire.request("http://104.196.231.114:8080/committees?per_page=all").responseJSON { response in
                 
                 if((response.result.value) != nil) {
                     let swiftyJsonVar = JSON(response.result.value!)
