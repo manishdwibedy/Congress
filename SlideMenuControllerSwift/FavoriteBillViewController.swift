@@ -45,12 +45,12 @@ class FavoriteBillViewController: UIViewController,UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let favorite = UserDefaults.standard.stringArray(forKey: "favorite_bills")
+        let favorite = UserDefaults.standard.stringArray(forKey: "favorite_bill")
         
-        if (favorite?.count)! > 0 {
+        if self.legislator_list.count == 0 && favorite != nil && (favorite?.count)! > 0 {
             SwiftSpinner.show("Fetching data...")
             
-            Alamofire.request("http://104.196.231.114:8080/bills?per_page=all").responseJSON { response in
+            Alamofire.request("http://localhost/congress.php?operation=bills").responseJSON { response in
                 
                 if((response.result.value) != nil) {
                     let swiftyJsonVar = JSON(response.result.value!)
@@ -59,35 +59,50 @@ class FavoriteBillViewController: UIViewController,UITableViewDelegate, UITableV
                     
                     for (_, subJson) in results {
                         var committee = [String:String]()
+                        if let title = subJson["official_title"].string {
+                            committee["title"] = title
+                        }
+                        
+                        if let bill_id = subJson["bill_id"].string {
+                            committee["bill_id"] = bill_id
+                        }
+                        
+                        if let bill_type = subJson["bill_type"].string {
+                            committee["bill_type"] = bill_type
+                        }
+                        if let first_name = subJson["sponsor"]["first_name"].string {
+                            committee["first_name"] = first_name
+                        }
+                        if let last_name = subJson["sponsor"]["last_name"].string {
+                            committee["last_name"] = last_name
+                        }
+                        if let sponsor_title = subJson["sponsor"]["title"].string {
+                            committee["sponsor_title"] = sponsor_title
+                        }
+                        
+                        if let last_action_at = subJson["last_action_at"].string {
+                            committee["last_action_at"] = last_action_at
+                        }
+                        
                         if let chamber = subJson["chamber"].string {
                             committee["chamber"] = chamber
                         }
                         
-                        if let name = subJson["name"].string {
-                            committee["name"] = name
+                        
+                        if let pdf = subJson["last_version"]["urls"]["pdf"].string {
+                            committee["pdf"] = pdf
                         }
                         
-                        if let parent_committee_id = subJson["parent_committee_id"].string {
-                            committee["parent_committee_id"] = parent_committee_id
+                        if let last_vote_at = subJson["last_vote_at"].string {
+                            committee["last_vote_at"] = last_vote_at
                         }
                         
-                        if let office = subJson["office"].string {
-                            committee["office"] = office
-                        }
-                        
-                        if let phone = subJson["phone"].string {
-                            committee["phone"] = phone
-                        }
-                        
-                        if let committee_id = subJson["committee_id"].string {
-                            committee["committee_id"] = committee_id
-                            if (favorite?.contains(committee_id))!{
-                                self.legislator_list.append(committee)
-                            }
+                        if (favorite?.contains(subJson["bill_id"].string!))!{
+                            self.legislator_list.append(committee)
                         }
                     }
                     SwiftSpinner.hide()
-                    self.legislator_list.sort(by: { $0["name"]?.localizedCaseInsensitiveCompare($1["name"]!) == ComparisonResult.orderedAscending })
+                    self.legislator_list.sort(by: { $0["title"]?.localizedCaseInsensitiveCompare($1["title"]!) == ComparisonResult.orderedAscending })
                     
                     self.filtered_list = self.legislator_list
                     self.billTable.reloadData()
@@ -120,11 +135,10 @@ class FavoriteBillViewController: UIViewController,UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.billTable.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell = self.billTable.dequeueReusableCell(withIdentifier: "cell")! as! FavoriteBillViewCell
         
         let legislator = self.filtered_list[indexPath.row]
-        cell.textLabel?.text = legislator["name"]!
-        cell.detailTextLabel?.text = legislator["committee_id"]
+        cell.value.text = legislator["title"]!
         
         return cell
     }

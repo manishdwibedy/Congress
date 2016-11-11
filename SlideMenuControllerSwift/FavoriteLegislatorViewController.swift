@@ -49,7 +49,7 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
         if (favorite?.count)! > 0 {
             SwiftSpinner.show("Fetching data...")
             
-            Alamofire.request("http://104.196.231.114:8080/legislators?per_page=all").responseJSON { response in
+            Alamofire.request("http://localhost/congress.php?operation=legislators").responseJSON { response in
                 
                 if((response.result.value) != nil) {
                     let swiftyJsonVar = JSON(response.result.value!)
@@ -113,7 +113,7 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
                         if let party = subJson["party"].string {
                             legislator["party"] = party
                         }
-                        if subJson["chamber"] == "house"{
+                        if (favorite?.contains(subJson["bioguide_id"].string!))!{
                             self.legislator_list.append(legislator)
                         }
                     }

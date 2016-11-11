@@ -104,9 +104,9 @@ class NewBillsViewController: UIViewController, UITableViewDelegate, UITableView
                             if !active{
                                 self.committee_list.append(committee)
                             }
-                            
                         }
                     }
+                    
                     SwiftSpinner.hide()
                     self.committee_list.sort(by: { $0["title"]?.localizedCaseInsensitiveCompare($1["title"]!) == ComparisonResult.orderedAscending })
                     

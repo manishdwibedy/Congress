@@ -46,10 +46,10 @@ class FavoriteCommitteeViewController: UIViewController,UITableViewDelegate, UIT
         super.viewWillAppear(animated)
         let favorite = UserDefaults.standard.stringArray(forKey: "favorite_committee")
         
-        if (favorite?.count)! > 0 {
+        if favorite != nil && (favorite?.count)! > 0 {
             SwiftSpinner.show("Fetching data...")
             
-            Alamofire.request("http://104.196.231.114:8080/legislators?per_page=all").responseJSON { response in
+            Alamofire.request("http://localhost/congress.php?operation=committees").responseJSON { response in
                 
                 if((response.result.value) != nil) {
                     let swiftyJsonVar = JSON(response.result.value!)

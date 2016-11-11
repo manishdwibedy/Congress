@@ -19,6 +19,7 @@
 		5BA51D021DD57E7C0019B7CB /* Bill1ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51D011DD57E7C0019B7CB /* Bill1ViewCell.swift */; };
 		5BA51D041DD582770019B7CB /* BillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51D031DD582770019B7CB /* BillDetailViewCell.swift */; };
 		5BA51D061DD582AE0019B7CB /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51D051DD582AE0019B7CB /* BillDetailViewController.swift */; };
+		5BA51D081DD594060019B7CB /* FavoriteBillViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51D071DD594060019B7CB /* FavoriteBillViewCell.swift */; };
 		5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */; };
 		5BC08ECC1DD01C810010D1B7 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */; };
 		5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */; };
@@ -87,6 +88,7 @@
 		5BA51D011DD57E7C0019B7CB /* Bill1ViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill1ViewCell.swift; sourceTree = "<group>"; };
 		5BA51D031DD582770019B7CB /* BillDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailViewCell.swift; sourceTree = "<group>"; };
 		5BA51D051DD582AE0019B7CB /* BillDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
+		5BA51D071DD594060019B7CB /* FavoriteBillViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteBillViewCell.swift; sourceTree = "<group>"; };
 		5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegStateViewController.swift; sourceTree = "<group>"; };
 		5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
 		5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBillsViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				5BC08EE31DD033C80010D1B7 /* FavoriteLegislatorViewController.swift */,
 				5BC08EE51DD033D40010D1B7 /* FavoriteBillViewController.swift */,
 				5BC08EE71DD033E70010D1B7 /* FavoriteCommitteeViewController.swift */,
+				5BA51D071DD594060019B7CB /* FavoriteBillViewCell.swift */,
 			);
 			name = Favorite;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				C5498C821BE8994F0076A7C5 /* UIImageView.swift in Sources */,
 				C5498C7E1BE897250076A7C5 /* ImageHeaderView.swift in Sources */,
 				C5BF6A861BEF4C080064C18E /* SubContentsViewController.swift in Sources */,
+				5BA51D081DD594060019B7CB /* FavoriteBillViewCell.swift in Sources */,
 				C5BA8AA61A43E2EF00863FB9 /* SlideMenuController.swift in Sources */,
 				5BC08ECC1DD01C810010D1B7 /* BillsViewController.swift in Sources */,
 				C5C1CE5F1A70F2FD00B6E411 /* String.swift in Sources */,
