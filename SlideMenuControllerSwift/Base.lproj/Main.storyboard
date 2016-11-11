@@ -476,7 +476,29 @@
                     <view key="view" contentMode="scaleToFill" id="b3B-gh-45D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-yY-Gw5">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="RGp-F6-HXS"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="About" id="2pn-1w-STc">
+                                        <barButtonItem key="leftBarButtonItem" image="ic_menu_black_24dp" id="mPJ-Js-UMc">
+                                            <connections>
+                                                <action selector="openMenu:" destination="hMf-ze-0uh" id="APH-fr-go1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TO1-yY-Gw5" firstAttribute="top" secondItem="rjn-a1-jUd" secondAttribute="bottom" constant="8" id="4Ji-29-KZV"/>
+                            <constraint firstItem="TO1-yY-Gw5" firstAttribute="leading" secondItem="b3B-gh-45D" secondAttribute="leading" id="Bk0-MB-s58"/>
+                            <constraint firstAttribute="trailing" secondItem="TO1-yY-Gw5" secondAttribute="trailing" id="luw-bf-GyE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSS-d0-7ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
