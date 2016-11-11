@@ -97,6 +97,12 @@ class BillDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         else if self.titleValue[indexPath.row] == "first_name"{
             cell.value.text = self.legislatorDetail["sponsor_title"]! + " " + self.legislatorDetail["first_name"]! + " " + self.legislatorDetail["last_name"]!
         }
+        else if self.titleValue[indexPath.row] == "chamber"{
+            cell.value.text = self.legislatorDetail["chamber"]?.capitalizingFirstLetter()
+        }
+        else if self.titleValue[indexPath.row] == "bill_type"{
+            cell.value.text = self.legislatorDetail["bill_type"]?.uppercased()
+        }
         else{
             cell.value.text = self.legislatorDetail[self.titleValue[indexPath.row]]
         }

@@ -47,7 +47,7 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
         super.viewWillAppear(animated)
         let favorite = UserDefaults.standard.stringArray(forKey: "favorite_legislator")
         
-        if (favorite?.count)! > 0 {
+        if (self.legislator_list.count == 0) && (favorite?.count)! > 0 {
             SwiftSpinner.show("Fetching data...")
             
             Alamofire.request("http://localhost/congress.php?operation=legislators").responseJSON { response in
