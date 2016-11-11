@@ -187,7 +187,7 @@ class LegSenateViewController: UIViewController, UITableViewDelegate, UITableVie
         if segue.identifier == "show_legislator_senate" {
             let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
             
-            viewController.legislatorDetail = (self.legislator_list[self.selectedIndex])
+            viewController.legislatorDetail = (self.filtered_list[self.selectedIndex])
             viewController.tab = 2
         }
     }

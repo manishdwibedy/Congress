@@ -188,7 +188,7 @@ class LegHouseViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "show_legislator_house" {
             let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
             
-            viewController.legislatorDetail = (self.legislator_list[self.selectedIndex])
+            viewController.legislatorDetail = (self.filtered_list[self.selectedIndex])
             viewController.tab = 1
         }
     }
