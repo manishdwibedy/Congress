@@ -15,6 +15,7 @@
 		5B8243C01DD2D7D00044C4AB /* CommitteeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8243BF1DD2D7D00044C4AB /* CommitteeDetailViewController.swift */; };
 		5B8243C21DD2E6D10044C4AB /* CommitteeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8243C11DD2E6D10044C4AB /* CommitteeViewCell.swift */; };
 		5B847D721DD08EF900EE39D3 /* LegislatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B847D711DD08EF900EE39D3 /* LegislatorDetailViewController.swift */; };
+		5BA51D001DD553000019B7CB /* BillViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51CFF1DD553000019B7CB /* BillViewCell.swift */; };
 		5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */; };
 		5BC08ECC1DD01C810010D1B7 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */; };
 		5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */; };
@@ -79,6 +80,7 @@
 		5B8243BF1DD2D7D00044C4AB /* CommitteeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteeDetailViewController.swift; sourceTree = "<group>"; };
 		5B8243C11DD2E6D10044C4AB /* CommitteeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteeViewCell.swift; sourceTree = "<group>"; };
 		5B847D711DD08EF900EE39D3 /* LegislatorDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislatorDetailViewController.swift; sourceTree = "<group>"; };
+		5BA51CFF1DD553000019B7CB /* BillViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewCell.swift; sourceTree = "<group>"; };
 		5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegStateViewController.swift; sourceTree = "<group>"; };
 		5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
 		5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBillsViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */,
 				5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */,
 				5BC08ED41DD0253F0010D1B7 /* NewBillsViewController.swift */,
+				5BA51CFF1DD553000019B7CB /* BillViewCell.swift */,
 			);
 			name = Bills;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */,
 				5BC08ED81DD02F180010D1B7 /* CommiteeViewController.swift in Sources */,
 				C5BF6A8C1BF340020064C18E /* ExSlideMenuController.swift in Sources */,
+				5BA51D001DD553000019B7CB /* BillViewCell.swift in Sources */,
 				5BC08EE81DD033E70010D1B7 /* FavoriteCommitteeViewController.swift in Sources */,
 				C5C1CE5D1A70F27500B6E411 /* BaseTableViewCell.swift in Sources */,
 				5BC08EDE1DD031050010D1B7 /* SenateCommitteeViewController.swift in Sources */,

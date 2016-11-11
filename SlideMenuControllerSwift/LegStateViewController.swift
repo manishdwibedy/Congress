@@ -45,7 +45,7 @@ class LegStateViewController: UIViewController, UITableViewDelegate, UITableView
         if legislator_list.count == 0 {
             
 
-            Alamofire.request("http://104.196.231.114:8080/legislators?per_page=all").responseJSON { response in
+            Alamofire.request("http://localhost/congress.php?operation=legislators").responseJSON { response in
                 
                 if((response.result.value) != nil) {
                     let swiftyJsonVar = JSON(response.result.value!)

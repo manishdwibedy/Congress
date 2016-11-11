@@ -25,6 +25,19 @@ class ActiveBillsViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.search = UISearchBar()
+        search.delegate = self
+        search.showsCancelButton = false
+        search.sizeToFit()
+        self.searchButton.image = UIImage(named: "search")!
+        self.searchButton.title = ""
+        
+        let appearance = UITabBarItem.appearance()
+        let attributes: [String: AnyObject] = [NSFontAttributeName : UIFont.systemFont(ofSize: 20.0)]
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+        appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -12)
+        self.billTable.tableFooterView = UIView()
     }
     
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
@@ -36,7 +49,7 @@ class ActiveBillsViewController: UIViewController, UITableViewDelegate, UITableV
         if self.committee_list.count == 0 {
             SwiftSpinner.show("Fetching data...")
             
-            Alamofire.request("http://104.196.231.114:8080/committees?per_page=all").responseJSON { response in
+            Alamofire.request("http://localhost/congress.php?operation=bills").responseJSON { response in
                 
                 if((response.result.value) != nil) {
                     let swiftyJsonVar = JSON(response.result.value!)
@@ -45,32 +58,15 @@ class ActiveBillsViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     for (_, subJson) in results {
                         var committee = [String:String]()
-                        if let chamber = subJson["chamber"].string {
-                            committee["chamber"] = chamber
+                        if let title = subJson["official_title"].string {
+                            committee["title"] = title
                         }
                         
-                        if let committee_id = subJson["committee_id"].string {
-                            committee["committee_id"] = committee_id
-                        }
-                        
-                        if let name = subJson["name"].string {
-                            committee["name"] = name
-                        }
-                        
-                        if let parent_committee_id = subJson["parent_committee_id"].string {
-                            committee["parent_committee_id"] = parent_committee_id
-                        }
-                        
-                        if let office = subJson["office"].string {
-                            committee["office"] = office
-                        }
-                        
-                        if let phone = subJson["phone"].string {
-                            committee["phone"] = phone
-                        }
-                        
-                        if subJson["chamber"] == "house"{
-                            self.committee_list.append(committee)
+                        if let active = subJson["history"]["active"].bool{
+                            if active{
+                                self.committee_list.append(committee)
+                            }
+                            
                         }
                     }
                     SwiftSpinner.hide()
@@ -107,11 +103,11 @@ class ActiveBillsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.billTable.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        let cell = self.billTable.dequeueReusableCell(withIdentifier: "cell")! as! BillViewCell
         
         let legislator = self.filtered_list[indexPath.row]
-        cell.textLabel?.text = legislator["name"]!
-        cell.detailTextLabel?.text = legislator["committee_id"]
+        cell.title.text = legislator["title"]!
+//        cell.detailTextLabel?.text = legislator["committee_id"]
         
         return cell
     }
@@ -123,7 +119,7 @@ class ActiveBillsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.filtered_list = searchText.isEmpty ? self.committee_list : self.committee_list.filter({(dataString: [String:String]) -> Bool in
-            return dataString["name"]?.range(of: searchText, options: .caseInsensitive) != nil
+            return dataString["title"]?.range(of: searchText, options: .caseInsensitive) != nil
         })
         self.billTable.reloadData()
     }
