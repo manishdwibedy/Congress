@@ -115,6 +115,14 @@ class FavoriteCommitteeViewController: UIViewController,UITableViewDelegate, UIT
         }
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filtered_list = searchText.isEmpty ? self.legislator_list : self.legislator_list.filter({(dataString: [String:String]) -> Bool in
+            return dataString["name"]?.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        self.committeeTable.reloadData()
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.filtered_list.count
     }

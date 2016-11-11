@@ -172,6 +172,13 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
 
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filtered_list = searchText.isEmpty ? self.legislator_list : self.legislator_list.filter({(dataString: [String:String]) -> Bool in
+            return dataString["first_name"]?.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        self.legislatorTable.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "fav_leg_detail" {
