@@ -100,6 +100,7 @@ class NewBillsViewController: UIViewController, UITableViewDelegate, UITableView
                         }
                         
                         if let active = subJson["history"]["active"].bool{
+                            committee["active"] = "New"
                             if !active{
                                 self.committee_list.append(committee)
                             }
