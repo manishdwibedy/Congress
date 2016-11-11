@@ -17,6 +17,8 @@
 		5B847D721DD08EF900EE39D3 /* LegislatorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B847D711DD08EF900EE39D3 /* LegislatorDetailViewController.swift */; };
 		5BA51D001DD553000019B7CB /* BillViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51CFF1DD553000019B7CB /* BillViewCell.swift */; };
 		5BA51D021DD57E7C0019B7CB /* Bill1ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51D011DD57E7C0019B7CB /* Bill1ViewCell.swift */; };
+		5BA51D041DD582770019B7CB /* BillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51D031DD582770019B7CB /* BillDetailViewCell.swift */; };
+		5BA51D061DD582AE0019B7CB /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA51D051DD582AE0019B7CB /* BillDetailViewController.swift */; };
 		5BC08ECA1DD019580010D1B7 /* LegStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */; };
 		5BC08ECC1DD01C810010D1B7 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */; };
 		5BC08ECE1DD01DFD0010D1B7 /* ActiveBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */; };
@@ -83,6 +85,8 @@
 		5B847D711DD08EF900EE39D3 /* LegislatorDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislatorDetailViewController.swift; sourceTree = "<group>"; };
 		5BA51CFF1DD553000019B7CB /* BillViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewCell.swift; sourceTree = "<group>"; };
 		5BA51D011DD57E7C0019B7CB /* Bill1ViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill1ViewCell.swift; sourceTree = "<group>"; };
+		5BA51D031DD582770019B7CB /* BillDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailViewCell.swift; sourceTree = "<group>"; };
+		5BA51D051DD582AE0019B7CB /* BillDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
 		5BC08EC91DD019580010D1B7 /* LegStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegStateViewController.swift; sourceTree = "<group>"; };
 		5BC08ECB1DD01C810010D1B7 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
 		5BC08ECD1DD01DFD0010D1B7 /* ActiveBillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBillsViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				5BC08ED41DD0253F0010D1B7 /* NewBillsViewController.swift */,
 				5BA51CFF1DD553000019B7CB /* BillViewCell.swift */,
 				5BA51D011DD57E7C0019B7CB /* Bill1ViewCell.swift */,
+				5BA51D031DD582770019B7CB /* BillDetailViewCell.swift */,
+				5BA51D051DD582AE0019B7CB /* BillDetailViewController.swift */,
 			);
 			name = Bills;
 			sourceTree = "<group>";
@@ -673,11 +679,13 @@
 				C539E66C1A316C78003B7CC7 /* MenuViewController.swift in Sources */,
 				C5BF6A821BEEF1A70064C18E /* DataTableViewCell.swift in Sources */,
 				5BC08EDA1DD030200010D1B7 /* FavoriteViewController.swift in Sources */,
+				5BA51D061DD582AE0019B7CB /* BillDetailViewController.swift in Sources */,
 				5B8243C01DD2D7D00044C4AB /* CommitteeDetailViewController.swift in Sources */,
 				C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */,
 				5BC08EE01DD031130010D1B7 /* JointCommiteeViewController.swift in Sources */,
 				C5F179D21BEB2FAF00EEDD9A /* UIColor.swift in Sources */,
 				5B847D721DD08EF900EE39D3 /* LegislatorDetailViewController.swift in Sources */,
+				5BA51D041DD582770019B7CB /* BillDetailViewCell.swift in Sources */,
 				5B8243C21DD2E6D10044C4AB /* CommitteeViewCell.swift in Sources */,
 				C5F179CE1BEB2A5900EEDD9A /* UIImage.swift in Sources */,
 				C5498C821BE8994F0076A7C5 /* UIImageView.swift in Sources */,

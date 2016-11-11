@@ -739,6 +739,7 @@
                         <outlet property="billTable" destination="slT-qk-Ua6" id="gRq-qj-y9N"/>
                         <outlet property="navigationBar" destination="niu-zI-IdH" id="kpc-PR-exN"/>
                         <outlet property="searchButton" destination="hY4-he-mmy" id="bNw-it-jNj"/>
+                        <segue destination="mQo-M5-jla" kind="showDetail" identifier="bill_detail" id="o4Y-rQ-a1n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRO-tZ-YEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -825,11 +826,118 @@
                         <outlet property="billTable" destination="FLM-WP-oTe" id="GHQ-24-aaP"/>
                         <outlet property="navigationBar" destination="SE4-n0-YVS" id="O9I-RO-blq"/>
                         <outlet property="searchButton" destination="CmW-6V-Icr" id="cFq-9W-NW6"/>
+                        <segue destination="mQo-M5-jla" kind="showDetail" identifier="bill_detail" id="f1C-Wp-k0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhA-QG-ZI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-847.20000000000005" y="1785.1574212893554"/>
+        </scene>
+        <!--Bill Detail View Controller-->
+        <scene sceneID="Jnc-Kj-WW8">
+            <objects>
+                <viewController id="mQo-M5-jla" customClass="BillDetailViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="57z-Hc-KSE"/>
+                        <viewControllerLayoutGuide type="bottom" id="FvO-Vu-LhQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jpI-jI-nQF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rly-Ei-xIV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yY2-WZ-pKQ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Bill Details" id="cWt-UH-P8t">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ThR-L7-42d">
+                                            <connections>
+                                                <segue destination="XVu-xz-fz4" kind="showDetail" id="qaQ-FT-FU3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="arq-yZ-ciN">
+                                            <connections>
+                                                <action selector="favorite:" destination="mQo-M5-jla" id="lih-oB-ktd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KBQ-3B-yye">
+                                <rect key="frame" x="16" y="92" width="343" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="TFA-Sa-4d3"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rWD-yd-nec">
+                                <rect key="frame" x="16" y="212" width="343" height="435"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Uhn-I6-o0v" customClass="BillDetailViewCell" customModule="SlideMenuControllerSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uhn-I6-o0v" id="z1x-EE-D6p">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQK-Jn-8Ml">
+                                                    <rect key="frame" x="8" y="11" width="93" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Lorem ipsum dolor sit er" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FAi-Lp-viA">
+                                                    <rect key="frame" x="95" y="3" width="240" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="TQK-Jn-8Ml" id="gai-8y-grk"/>
+                                            <outlet property="value" destination="FAi-Lp-viA" id="Knz-53-2QY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mQo-M5-jla" id="ryR-jn-4Qi"/>
+                                    <outlet property="delegate" destination="mQo-M5-jla" id="v6G-vY-PwH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rly-Ei-xIV" secondAttribute="trailing" id="H8K-Kh-dUF"/>
+                            <constraint firstItem="KBQ-3B-yye" firstAttribute="trailing" secondItem="jpI-jI-nQF" secondAttribute="trailingMargin" id="Jm5-4d-0iA"/>
+                            <constraint firstItem="rWD-yd-nec" firstAttribute="trailing" secondItem="jpI-jI-nQF" secondAttribute="trailingMargin" id="PLA-74-N4H"/>
+                            <constraint firstItem="rWD-yd-nec" firstAttribute="leading" secondItem="jpI-jI-nQF" secondAttribute="leadingMargin" id="QgX-Nr-iAf"/>
+                            <constraint firstItem="Rly-Ei-xIV" firstAttribute="leading" secondItem="jpI-jI-nQF" secondAttribute="leading" id="SON-Xr-Uie"/>
+                            <constraint firstItem="Rly-Ei-xIV" firstAttribute="top" secondItem="57z-Hc-KSE" secondAttribute="bottom" constant="8" id="Scu-4v-gBL"/>
+                            <constraint firstItem="KBQ-3B-yye" firstAttribute="leading" secondItem="jpI-jI-nQF" secondAttribute="leadingMargin" id="XaC-0k-hS5"/>
+                            <constraint firstItem="rWD-yd-nec" firstAttribute="top" secondItem="KBQ-3B-yye" secondAttribute="bottom" constant="20" id="cSX-TT-7la"/>
+                            <constraint firstItem="FvO-Vu-LhQ" firstAttribute="top" secondItem="rWD-yd-nec" secondAttribute="bottom" constant="20" id="m0W-fp-zLi"/>
+                            <constraint firstItem="KBQ-3B-yye" firstAttribute="top" secondItem="Rly-Ei-xIV" secondAttribute="bottom" constant="20" id="rK1-gX-LeY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="billTable" destination="rWD-yd-nec" id="x4t-Sr-1T8"/>
+                        <outlet property="billTitle" destination="KBQ-3B-yye" id="ALb-m9-okW"/>
+                        <outlet property="favoriteButton" destination="arq-yZ-ciN" id="RHa-Po-8Tk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAv-Rh-JRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="2145.8770614692658"/>
         </scene>
         <!--Joint-->
         <scene sceneID="yee-hq-eCr">
@@ -1231,7 +1339,8 @@
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="shI-uS-OYV"/>
         <segue reference="xNb-Ug-sbn"/>
+        <segue reference="shI-uS-OYV"/>
+        <segue reference="f1C-Wp-k0y"/>
     </inferredMetricsTieBreakers>
 </document>

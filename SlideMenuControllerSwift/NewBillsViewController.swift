@@ -65,6 +65,40 @@ class NewBillsViewController: UIViewController, UITableViewDelegate, UITableView
                             committee["title"] = title
                         }
                         
+                        if let bill_id = subJson["bill_id"].string {
+                            committee["bill_id"] = bill_id
+                        }
+                        
+                        if let bill_type = subJson["bill_type"].string {
+                            committee["bill_type"] = bill_type
+                        }
+                        if let first_name = subJson["sponsor"]["first_name"].string {
+                            committee["first_name"] = first_name
+                        }
+                        if let last_name = subJson["sponsor"]["last_name"].string {
+                            committee["last_name"] = last_name
+                        }
+                        if let sponsor_title = subJson["sponsor"]["title"].string {
+                            committee["sponsor_title"] = sponsor_title
+                        }
+                        
+                        if let last_action_at = subJson["last_action_at"].string {
+                            committee["last_action_at"] = last_action_at
+                        }
+                        
+                        if let chamber = subJson["chamber"].string {
+                            committee["chamber"] = chamber
+                        }
+                        
+                        
+                        if let pdf = subJson["last_version"]["urls"]["pdf"].string {
+                            committee["pdf"] = pdf
+                        }
+                        
+                        if let last_vote_at = subJson["last_vote_at"].string {
+                            committee["last_vote_at"] = last_vote_at
+                        }
+                        
                         if let active = subJson["history"]["active"].bool{
                             if !active{
                                 self.committee_list.append(committee)
@@ -116,7 +150,7 @@ class NewBillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedIndex = indexPath.row
-        self.performSegue(withIdentifier: "house_committee_detail", sender: nil)
+        self.performSegue(withIdentifier: "bill_detail", sender: nil)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -124,5 +158,15 @@ class NewBillsViewController: UIViewController, UITableViewDelegate, UITableView
             return dataString["title"]?.range(of: searchText, options: .caseInsensitive) != nil
         })
         self.billTable.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "bill_detail" {
+            let viewController = segue.destination as! BillDetailViewController
+            
+            viewController.legislatorDetail = (self.filtered_list[self.selectedIndex])
+            viewController.tab = 1
+        }
     }
 }
