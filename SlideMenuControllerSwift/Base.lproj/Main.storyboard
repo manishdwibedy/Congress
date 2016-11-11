@@ -492,18 +492,45 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="LYx-qd-gQp">
+                                <rect key="frame" x="67" y="122" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="fU2-Tc-yEn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manish Dwibedy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L48-9X-t8U">
+                                <rect key="frame" x="16" y="347" width="343" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7848-XXXX-XX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6q-qC-K9E">
+                                <rect key="frame" x="16" y="400.5" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="L48-9X-t8U" firstAttribute="top" secondItem="LYx-qd-gQp" secondAttribute="bottom" constant="75" id="19I-ec-V35"/>
                             <constraint firstItem="TO1-yY-Gw5" firstAttribute="top" secondItem="rjn-a1-jUd" secondAttribute="bottom" constant="8" id="4Ji-29-KZV"/>
+                            <constraint firstItem="LYx-qd-gQp" firstAttribute="leading" secondItem="b3B-gh-45D" secondAttribute="leadingMargin" constant="51" id="8IX-gl-pH6"/>
                             <constraint firstItem="TO1-yY-Gw5" firstAttribute="leading" secondItem="b3B-gh-45D" secondAttribute="leading" id="Bk0-MB-s58"/>
+                            <constraint firstItem="y6q-qC-K9E" firstAttribute="leading" secondItem="b3B-gh-45D" secondAttribute="leadingMargin" id="GWB-13-FDL"/>
+                            <constraint firstItem="L48-9X-t8U" firstAttribute="trailing" secondItem="b3B-gh-45D" secondAttribute="trailingMargin" id="PTe-X9-Ka8"/>
+                            <constraint firstItem="LYx-qd-gQp" firstAttribute="top" secondItem="TO1-yY-Gw5" secondAttribute="bottom" constant="50" id="Vkn-Vp-XXE"/>
+                            <constraint firstItem="y6q-qC-K9E" firstAttribute="trailing" secondItem="b3B-gh-45D" secondAttribute="trailingMargin" id="YIj-zV-XJ4"/>
+                            <constraint firstItem="L48-9X-t8U" firstAttribute="leading" secondItem="b3B-gh-45D" secondAttribute="leadingMargin" id="dFO-LG-JQP"/>
                             <constraint firstAttribute="trailing" secondItem="TO1-yY-Gw5" secondAttribute="trailing" id="luw-bf-GyE"/>
+                            <constraint firstItem="y6q-qC-K9E" firstAttribute="top" secondItem="L48-9X-t8U" secondAttribute="bottom" constant="20" id="vlX-3g-36n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LYx-qd-gQp" secondAttribute="trailing" constant="52" id="xW4-VN-SDl"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSS-d0-7ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5841" y="-1549"/>
+            <point key="canvasLocation" x="5840.8000000000002" y="-1549.4752623688157"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="s6e-GE-gt7">
@@ -1426,6 +1453,7 @@
     </scenes>
     <resources>
         <image name="ic_menu_black_24dp" width="24" height="24"/>
+        <image name="profile_pic" width="274" height="274"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xNb-Ug-sbn"/>
