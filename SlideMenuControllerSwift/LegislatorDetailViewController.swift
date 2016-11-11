@@ -98,6 +98,18 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
 
             cell.value.text = dateFormatter.string(from: date!)
         }
+        else if self.titleValue[indexPath.row] == "gender"{
+            let gender = self.legislatorDetail[self.titleValue[indexPath.row]]?.lowercased()
+            if gender == "m"{
+                cell.value.text = "Male"
+            }
+            else{
+                cell.value.text = "Female"
+            }
+        }
+        else if self.titleValue[indexPath.row] == "chamber"{
+            cell.value.text = self.legislatorDetail[self.titleValue[indexPath.row]]?.capitalizingFirstLetter()
+        }
         else if self.titleValue[indexPath.row] == "website"{
             let linkAttributes = [
                 NSLinkAttributeName: NSURL(string: self.legislatorDetail[self.titleValue[indexPath.row]]!)!,
