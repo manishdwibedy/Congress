@@ -36,7 +36,13 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func back(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "legislator_list", sender: nil)
+        if self.tab < 4{
+            self.performSegue(withIdentifier: "legislator_list", sender: nil)
+        }
+        else if self.tab == 4{
+            self.performSegue(withIdentifier: "fav_leg", sender: nil)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,6 +153,9 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
             let viewController:LegislatorViewController = segue.destination as! LegislatorViewController
             
             viewController.tab = self.tab
+        }
+        else if segue.identifier == "fav_leg"{
+            //let viewController = segue.destination as! FavoriteLegislatorViewController
         }
     }
 }

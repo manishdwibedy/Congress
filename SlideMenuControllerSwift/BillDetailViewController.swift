@@ -43,6 +43,14 @@ class BillDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        if self.tab < 4{
+            self.performSegue(withIdentifier: "bill_list", sender: nil)
+        }
+        else if self.tab == 4{
+            self.performSegue(withIdentifier: "fav_bill", sender: nil)
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titleValue.count

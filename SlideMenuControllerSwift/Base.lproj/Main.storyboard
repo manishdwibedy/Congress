@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36c-BA-QEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3768.8000000000002" y="842.42878560719646"/>
+            <point key="canvasLocation" x="4098" y="944"/>
         </scene>
         <!--Bills-->
         <scene sceneID="IwQ-sB-3fp">
@@ -367,6 +367,7 @@
                         <outlet property="billTable" destination="eiM-6D-QVF" id="Ht5-5x-0eD"/>
                         <outlet property="navigationBar" destination="wYL-Q1-D6V" id="Wuu-yy-OMu"/>
                         <outlet property="searchButton" destination="zVO-gr-IQW" id="Rhe-Sd-j1h"/>
+                        <segue destination="mQo-M5-jla" kind="showDetail" identifier="fav_bill_detail" id="PaJ-hc-Tcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHa-Xw-INV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -456,11 +457,12 @@
                         <outlet property="legislatorTable" destination="2bm-yD-BRU" id="5nX-i2-1Cm"/>
                         <outlet property="navigationBar" destination="fA8-RK-g0n" id="Owd-Cf-RKg"/>
                         <outlet property="searchButton" destination="3G5-ob-EPP" id="dOy-3d-2Yc"/>
+                        <segue destination="Pgf-0M-WFC" kind="showDetail" identifier="fav_leg_detail" id="2Xt-bB-7qD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU0-AO-lRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3768.8000000000002" y="-619.34032983508246"/>
+            <point key="canvasLocation" x="4097" y="-725"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="s6e-GE-gt7">
@@ -675,6 +677,7 @@
                         <outlet property="image" destination="2mV-nN-TCJ" id="jQR-fJ-Q15"/>
                         <outlet property="legislatorDetails" destination="sxB-Qq-0TR" id="AyQ-CY-YaG"/>
                         <segue destination="drs-uX-qyB" kind="showDetail" identifier="legislator_list" id="ypI-Mu-4VF"/>
+                        <segue destination="umB-sw-VQs" kind="showDetail" identifier="fav_leg" id="FTl-dw-bwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TB-jv-nkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -895,7 +898,7 @@
                                     <navigationItem title="Bill Details" id="cWt-UH-P8t">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="ThR-L7-42d">
                                             <connections>
-                                                <segue destination="XVu-xz-fz4" kind="showDetail" id="qaQ-FT-FU3"/>
+                                                <action selector="back:" destination="mQo-M5-jla" id="D1h-Z5-eir"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" id="arq-yZ-ciN">
@@ -974,11 +977,13 @@
                         <outlet property="billTable" destination="rWD-yd-nec" id="x4t-Sr-1T8"/>
                         <outlet property="billTitle" destination="KBQ-3B-yye" id="ALb-m9-okW"/>
                         <outlet property="favoriteButton" destination="arq-yZ-ciN" id="RHa-Po-8Tk"/>
+                        <segue destination="umB-sw-VQs" kind="showDetail" identifier="fav_bill" id="2QT-5d-R6e"/>
+                        <segue destination="XVu-xz-fz4" kind="showDetail" identifier="bill_list" id="tZm-4a-VQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAv-Rh-JRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="2145.8770614692658"/>
+            <point key="canvasLocation" x="463" y="2072"/>
         </scene>
         <!--Joint-->
         <scene sceneID="yee-hq-eCr">
@@ -1380,8 +1385,9 @@
         <image name="ic_menu_black_24dp" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xNb-Ug-sbn"/>
+        <segue reference="2Xt-bB-7qD"/>
+        <segue reference="2QT-5d-R6e"/>
+        <segue reference="PaJ-hc-Tcq"/>
         <segue reference="shI-uS-OYV"/>
-        <segue reference="f1C-Wp-k0y"/>
     </inferredMetricsTieBreakers>
 </document>

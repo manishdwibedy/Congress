@@ -20,6 +20,7 @@ class FavoriteBillViewController: UIViewController,UITableViewDelegate, UITableV
     var filtered_list = [[String:String]]()
     var searching = true
     var search = UISearchBar()
+    var selected_index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,8 +145,18 @@ class FavoriteBillViewController: UIViewController,UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.selectedIndex = indexPath.row
-        //self.performSegue(withIdentifier: "show_legislator_house", sender: nil)
+        self.selected_index = indexPath.row
+        self.performSegue(withIdentifier: "fav_bill_detail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fav_bill_detail" {
+            let viewController = segue.destination as! BillDetailViewController
+            
+            viewController.legislatorDetail = (self.legislator_list[self.selected_index])
+            viewController.tab = 4
+        }
     }
 
 }

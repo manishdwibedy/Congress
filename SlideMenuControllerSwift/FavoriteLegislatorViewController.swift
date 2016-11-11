@@ -20,6 +20,7 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
     var search = UISearchBar()
     @IBOutlet weak var navigationBar: UINavigationBar!
     var searching = true
+    var selected_index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,8 +148,8 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.selectedIndex = indexPath.row
-        //self.performSegue(withIdentifier: "show_legislator_house", sender: nil)
+        self.selected_index = indexPath.row
+        self.performSegue(withIdentifier: "fav_leg_detail", sender: nil)
     }
     
     @IBAction func search(_ sender: UIBarButtonItem) {
@@ -169,6 +170,16 @@ class FavoriteLegislatorViewController: UIViewController,UITableViewDelegate, UI
             
         }
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fav_leg_detail" {
+            let viewController:LegislatorDetailViewController = segue.destination as! LegislatorDetailViewController
+            
+            viewController.legislatorDetail = (self.legislator_list[self.selected_index])
+            viewController.tab = 4
+        }
     }
     
 }
