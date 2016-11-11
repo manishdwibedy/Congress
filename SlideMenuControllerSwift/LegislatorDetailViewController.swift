@@ -155,7 +155,8 @@ class LegislatorDetailViewController: UIViewController, UITableViewDelegate, UIT
             viewController.tab = self.tab
         }
         else if segue.identifier == "fav_leg"{
-            //let viewController = segue.destination as! FavoriteLegislatorViewController
+            let viewController = segue.destination as! FavoriteViewController
+            viewController.tab = 1
         }
     }
 }

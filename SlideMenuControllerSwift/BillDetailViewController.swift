@@ -134,4 +134,11 @@ class BillDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         UserDefaults.standard.set(favorite, forKey: "favorite_bill")
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fav_bill"{
+            let viewController = segue.destination as! FavoriteViewController
+            viewController.tab = 1
+        }
+    }
 }
