@@ -42,6 +42,14 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        if self.tab < 4{
+            self.performSegue(withIdentifier: "committee_list", sender: nil)
+        }
+        else if self.tab == 4{
+            self.performSegue(withIdentifier: "fav_committee", sender: nil)
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titleValue.count
@@ -120,6 +128,10 @@ class CommitteeDetailViewController: UIViewController, UITableViewDelegate, UITa
             let viewController:CommitteeViewController = segue.destination as! CommitteeViewController
             
             viewController.tab = self.tab
+        }
+        else if segue.identifier == "fav_committee"{
+            let viewController = segue.destination as! FavoriteViewController
+            viewController.tab = 2
         }
     }
 

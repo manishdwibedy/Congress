@@ -21,6 +21,7 @@ class FavoriteCommitteeViewController: UIViewController,UITableViewDelegate, UIT
     var filtered_list = [[String:String]]()
     var searching = true
     var search = UISearchBar()
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +130,17 @@ class FavoriteCommitteeViewController: UIViewController,UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.selectedIndex = indexPath.row
-        //self.performSegue(withIdentifier: "show_legislator_house", sender: nil)
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "fav_committee_detail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fav_committee_detail" {
+            let viewController = segue.destination as! CommitteeDetailViewController
+            
+            viewController.committeeDetail = (self.legislator_list[self.selectedIndex])
+            viewController.tab = 4
+        }
     }
 }
