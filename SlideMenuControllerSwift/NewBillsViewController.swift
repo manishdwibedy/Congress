@@ -27,6 +27,20 @@ class NewBillsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.search = UISearchBar()
+        search.delegate = self
+        search.showsCancelButton = false
+        search.sizeToFit()
+        self.searchButton.image = UIImage(named: "search")!
+        self.searchButton.title = ""
+        
+        let appearance = UITabBarItem.appearance()
+        let attributes: [String: AnyObject] = [NSFontAttributeName : UIFont.systemFont(ofSize: 20.0)]
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+        appearance.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -12)
+        self.billTable.tableFooterView = UIView()
+
     }
     
     @IBAction func openMenu(_ sender: UIBarButtonItem) {
@@ -52,14 +66,14 @@ class NewBillsViewController: UIViewController, UITableViewDelegate, UITableView
                         }
                         
                         if let active = subJson["history"]["active"].bool{
-                            if active{
+                            if !active{
                                 self.committee_list.append(committee)
                             }
                             
                         }
                     }
                     SwiftSpinner.hide()
-                    self.committee_list.sort(by: { $0["name"]?.localizedCaseInsensitiveCompare($1["name"]!) == ComparisonResult.orderedAscending })
+                    self.committee_list.sort(by: { $0["title"]?.localizedCaseInsensitiveCompare($1["title"]!) == ComparisonResult.orderedAscending })
                     
                     self.filtered_list = self.committee_list
                     self.billTable.reloadData()
